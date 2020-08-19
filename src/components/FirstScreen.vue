@@ -1,12 +1,19 @@
 <template>
-  <div class="hello">
+  <div class="first-banner">
     <h1>{{ msg }}</h1>
+    <app-header/>
+    <div class></div>
   </div>
 </template>
 
 <script>
+import AppHeader from "@/components/AppHeader.vue";
 export default {
   name: "FirstScreen",
+
+  components: {
+    AppHeader
+  },
 
   data() {
     return {
