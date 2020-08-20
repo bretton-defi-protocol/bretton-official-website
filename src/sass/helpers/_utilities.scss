@@ -147,8 +147,10 @@
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     @each $prop,
-      $abbrev in (width: w, height: h) {
-      @each $size, $length in $sizes {
+    $abbrev in (width: w, height: h) {
+
+      @each $size,
+      $length in $sizes {
         .#{$abbrev}#{$infix}-#{$size} {
           #{$prop}: $length !important;
         }
@@ -294,14 +296,11 @@
   opacity: 0;
 }
 
-// App-header
-.app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1029;
-  width: 100%;
-}
+// // App-header
+// .app-header {
+//   z-index: 1029;
+//   width: 100%;
+// }
 
 //border
 .no-border {
@@ -315,4 +314,64 @@
   font-weight: 500;
   line-height: .25rem;
   padding: .18rem .15rem;
+}
+
+
+.global-width {
+  margin: 0 auto;
+  width: 12rem;
+  max-width: 100%;
+}
+
+.popover {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  width: 2.89rem;
+  height: 1.89rem;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.04rem;
+  font-weight: 400;
+  line-height: 0.28rem;
+  color: rgba(13, 26, 38, 1);
+  opacity: 1;
+  bottom: -2.2rem;
+  left: -2.1rem;
+  padding: 0.14rem 0;
+  font-size: 0.28rem;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    height: 0.6rem;
+    background: transparent;
+    border: 0.3rem solid;
+    top: -0.6rem;
+    border-width: 0.24rem 0.16rem;
+    border-style: solid;
+    border-color: transparent transparent#ffffff transparent;
+    right: 0.2rem;
+  }
+
+  >p {
+    padding: 0.2rem 0.32rem;
+    position: relative;
+    text-align: left;
+
+    &.active {
+      color: rgba(253, 38, 124, 1);
+      background: rgba(253, 38, 124, 0.1);
+
+      &:after {
+        position: absolute;
+        content: "";
+        width: 0.08rem;
+        height: 100%;
+        background: rgba(253, 38, 124, 1);
+        right: 0.02rem;
+        top: 0;
+      }
+    }
+  }
 }

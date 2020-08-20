@@ -7,12 +7,14 @@ html {
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
+  height: 100%;
 }
 
 body {
   font: $font-weight #{$font-size-base}/#{$line-height-base} $font-family-base;
   background: $body-bg;
   color: $body-color;
+  height: 100%;
 }
 
 article,
