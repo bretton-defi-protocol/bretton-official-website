@@ -27,29 +27,31 @@
           <span class="animatin-icon icon-ovalIcon02 hide-mobile">
             <img :src="ovalIcon01" alt="tusd">
           </span>
-          <div class="icon-box">
-            <a class="delta">
-              <img :src="deltaIcon" alt="delta">
-            </a>
-            <span class>
-              <img :src="tusdIcon" alt="tusd">
+          <div class="icon-box-wrap">
+            <div class="icon-box">
+              <div class="delta">
+                <!-- <img :src="deltaIcon" alt="delta"> -->
+              </div>
+              <span class="icon-tsud">
+                <img :src="tusdIcon" alt="tusd">
+              </span>
+              <span class="icon-usdt">
+                <img :src="usdtIcon" alt="usdt">
+              </span>
+              <span class="icon-usdc">
+                <img :src="usdcIcon" alt="usdc">
+              </span>
+              <span class="icon-dai">
+                <img :src="daiIcon" alt="dai">
+              </span>
+            </div>
+            <span class="animatin-icon icon-oval02 hide-mobile">
+              <img :src="ovalIcon02" alt="ovalIcon02">
             </span>
-            <span class>
-              <img :src="usdtIcon" alt="usdt">
-            </span>
-            <span class>
-              <img :src="usdcIcon" alt="usdc">
-            </span>
-            <span class>
-              <img :src="daiIcon" alt="dai">
+            <span class="animatin-icon icon-rectangle hide-mobile">
+              <img :src="rectangleIcon01" alt="rectangleIcon01">
             </span>
           </div>
-          <span class="animatin-icon icon-oval02 hide-mobile">
-            <img :src="ovalIcon02" alt="ovalIcon02">
-          </span>
-          <span class="animatin-icon icon-rectangle hide-mobile">
-            <img :src="rectangleIcon01" alt="rectangleIcon01">
-          </span>
         </div>
       </div>
     </div>
@@ -145,29 +147,44 @@ export default {
   &-right {
     position: relative;
     margin-top: 1.5rem;
+    .icon-box-wrap {
+      max-width: 80%;
+    }
     .icon-box {
       position: relative;
+      display: inline-block;
+      background-image: url("../assets/images/firstBanner/icon-delta.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 4rem;
+      height: 4rem;
+      max-width: 100%;
 
       > span {
         position: absolute;
         z-index: 1;
+        width: 1.2rem;
+        height: 1.2rem;
+
+        img {
+          max-width: 100%;
+        }
 
         &:nth-of-type(1) {
           top: -0.16rem;
-          right: 0.97rem;
+          right: 0.6rem;
         }
         &:nth-of-type(2) {
           top: 0.4rem;
-          // right: -0.63rem;
-          right: -0.3rem;
+          right: -1.2rem;
         }
         &:nth-of-type(3) {
           bottom: 0.2rem;
-          right: 0.9rem;
+          right: 0.3rem;
         }
         &:nth-of-type(4) {
-          bottom: -0.04rem;
-          left: 0.95rem;
+          bottom: 0.14rem;
+          left: 0.2rem;
         }
       }
     }
@@ -220,7 +237,7 @@ export default {
     }
   }
 }
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .first-banner {
     height: auto;
 
@@ -244,7 +261,163 @@ export default {
 
     &-right {
       order: 1;
+
+      .icon-box {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .icon-box > span {
+        width: 0.8rem;
+        height: 0.8rem;
+
+        &:nth-of-type(1) {
+          top: -0.04rem;
+          right: 0.3rem;
+        }
+        &:nth-of-type(2) {
+          top: 0.4rem;
+          right: -0.6rem;
+        }
+        &:nth-of-type(3) {
+          bottom: 0.2rem;
+          right: 0.1rem;
+        }
+        &:nth-of-type(4) {
+          bottom: 0.07rem;
+          left: 0.2rem;
+        }
+      }
     }
   }
 }
 </style>
+<style lang="scss">
+.icon-ovalIcon01 {
+  animation: move01 2s infinite;
+}
+@keyframes move01 {
+  0% {
+    bottom: 1.42rem;
+  }
+  50% {
+    bottom: 1.32rem;
+  }
+  100% {
+    bottom: 1.42rem;
+  }
+}
+.icon-polygonIcon02 {
+  animation: move02 2s infinite;
+}
+@keyframes move02 {
+  0% {
+    top: 0.43rem;
+  }
+  50% {
+    top: 0.53rem;
+  }
+  100% {
+    top: 0.43rem;
+  }
+}
+.icon-polygonIcon03 {
+  animation: move03 2s infinite;
+}
+@keyframes move03 {
+  0% {
+    bottom: 0.33rem;
+  }
+  50% {
+    bottom: 0.2rem;
+  }
+  100% {
+    bottom: 0.33rem;
+  }
+}
+.icon-ovalIcon02 {
+  animation: move04 2s infinite;
+}
+@keyframes move04 {
+  0% {
+    top: -1.1rem;
+  }
+  50% {
+    top: -1rem;
+  }
+  100% {
+    top: -1.1rem;
+  }
+}
+.icon-rectangle {
+  animation: move05 2s infinite;
+}
+@keyframes move05 {
+  0% {
+    bottom: 0.18rem;
+  }
+  50% {
+    bottom: 0.1rem;
+  }
+  100% {
+    bottom: 0.18rem;
+  }
+}
+.icon-tsud {
+  animation: move06 2s infinite;
+}
+@keyframes move06 {
+  0% {
+    top: -0.16rem;
+  }
+  50% {
+    top: -0.06rem;
+  }
+  100% {
+    top: -0.16rem;
+  }
+}
+.icon-usdt {
+  animation: move07 2s infinite;
+}
+@keyframes move07 {
+  0% {
+    top: 0.4rem;
+  }
+  50% {
+    top: 0.3rem;
+  }
+  100% {
+    top: 0.4rem;
+  }
+}
+.icon-usdc {
+  animation: move08 2s infinite;
+}
+@keyframes move08 {
+  0% {
+    bottom: 0.2rem;
+  }
+  50% {
+    bottom: 0.1rem;
+  }
+  100% {
+    bottom: 0.2rem;
+  }
+}
+.icon-dai {
+  animation: move09 2s infinite;
+}
+@keyframes move09 {
+  0% {
+    bottom: 0.14rem;
+  }
+  50% {
+    bottom: 0.06rem;
+  }
+  100% {
+    bottom: 0.14rem;
+  }
+}
+</style>
+
