@@ -1,5 +1,5 @@
 <template>
-  <div class="forum corporation">
+  <div class="forum corporation" id="forum">
     <div class="forum-container">
       <div class="global-width forum-wrap">
         <div class="text-box">
@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <p class="contact">与我们合作</p>
+    <p class="contact" id="contact">与我们合作</p>
     <p class="email">
       <span>1196651331@qq.com</span>
     </p>

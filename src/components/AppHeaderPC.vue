@@ -5,7 +5,11 @@
     </h1>
     <nav class="nav col-4">
       <ul>
-        <li v-for="(item, index) in navArr" :key="index">{{ item.text }}</li>
+        <li
+          v-for="(item, index) in navArr"
+          :key="index"
+          @click="switchItem(item, index)"
+        >{{ item.text }}</li>
         <div class="switch-lang">
           <span>切换语言</span>
           <div class="popover-lang popover" v-if="showLangPopover">
@@ -25,12 +29,25 @@ export default {
     return {
       logoSrc: require("@/assets/images/header/logo.png"),
       navArr: [
-        { id: "00", text: "首页" },
-        { id: "01", text: "论坛" },
-        { id: "02", text: "合作" }
+        { id: "00", text: "首页", anchor: "firstScreen" },
+        { id: "01", text: "论坛", anchor: "forum" },
+        { id: "02", text: "合作", anchor: "contact" }
       ],
       showLangPopover: false
     };
+  },
+
+  methods: {
+    switchItem(item, index) {
+      // 设置滚动行为改为平滑的滚动
+
+      let target = document.getElementById(item.anchor);
+
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: "smooth"
+      });
+    }
   }
 };
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <div class="first-banner">
+  <div class="first-banner" id="firstScreen">
     <div class="global-width">
       <app-header-PC/>
       <app-header-Mobile/>
       <div class="main flex">
         <div class="first-banner-left col-md-6 col-sm-12">
-          <span class="animatin-icon icon-polygonIcon02">
+          <span class="animatin-icon icon-polygonIcon02 hide-mobile">
             <img :src="polygonIcon02" alt="tusd">
           </span>
           <h2>Invest for the</h2>
@@ -16,15 +16,15 @@
             <span class="btn-white">查看白皮书</span>
           </p>
 
-          <span class="animatin-icon icon-polygonIcon03">
+          <span class="animatin-icon icon-polygonIcon03 hide-mobile">
             <img :src="polygonIcon03" alt="tusd">
           </span>
-          <span class="animatin-icon icon-ovalIcon01">
+          <span class="animatin-icon icon-ovalIcon01 hide-mobile">
             <img :src="ovalIcon01" alt="tusd">
           </span>
         </div>
         <div class="first-banner-right col-md-6 col-sm-12">
-          <span class="animatin-icon icon-ovalIcon02">
+          <span class="animatin-icon icon-ovalIcon02 hide-mobile">
             <img :src="ovalIcon01" alt="tusd">
           </span>
           <div class="icon-box">
@@ -44,10 +44,10 @@
               <img :src="daiIcon" alt="dai">
             </span>
           </div>
-          <span class="animatin-icon icon-oval02">
+          <span class="animatin-icon icon-oval02 hide-mobile">
             <img :src="ovalIcon02" alt="ovalIcon02">
           </span>
-          <span class="animatin-icon icon-rectangle">
+          <span class="animatin-icon icon-rectangle hide-mobile">
             <img :src="rectangleIcon01" alt="rectangleIcon01">
           </span>
         </div>
@@ -127,6 +127,7 @@ export default {
       }
       &.btn-wrap {
         margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
       }
       .btn-white {
         background: rgba(255, 255, 255, 1);
@@ -233,6 +234,12 @@ export default {
 
     &-left {
       order: 2;
+
+      // p {
+      //   .btn-wrap {
+      //     margin-bottom: 0.4rem;
+      //   }
+      // }
     }
 
     &-right {

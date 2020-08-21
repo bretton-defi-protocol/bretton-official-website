@@ -6,7 +6,7 @@
       </a>
     </h1>
     <div class="nav-btn col-2">
-      <span class="nav-btn-icon">
+      <span class="nav-btn-icon" @click="toggleNav">
         <img :src="navBtnIcon" alt>
       </span>
     </div>
@@ -15,6 +15,7 @@
         v-for="(item,index) in navArr"
         :key="index"
         :class="{active: index ===  activeIndex}"
+        @click="switchItem(item, index)"
       >{{ item.text }}</p>
     </div>
   </div>
@@ -36,6 +37,20 @@ export default {
       ],
       showPopoverNav: false
     };
+  },
+
+  methods: {
+    toggleNav() {
+      this.showPopoverNav = !this.showPopoverNav;
+    },
+
+    switchItem(item, index) {
+      this.activeIndex = index;
+      this.showPopoverNav = false;
+
+      if (index == 3) {
+      }
+    }
   }
 };
 </script>
@@ -55,6 +70,7 @@ export default {
   .nav-btn-icon {
     width: 46px;
     height: 26px;
+    cursor: pointer;
 
     img {
       max-width: 100%;
@@ -72,6 +88,7 @@ export default {
     width: 4.8rem;
     top: 1.2rem;
     max-width: 88%;
+    z-index: 999;
   }
 }
 </style>
