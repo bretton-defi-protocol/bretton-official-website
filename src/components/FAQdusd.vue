@@ -19,7 +19,7 @@
 </template>
 <script>
 export default {
-  name: "faq",
+  name: "faq-dusd",
 
   data() {
     return {
@@ -75,6 +75,16 @@ export default {
 @media (max-width: 769px) {
   .faq {
     height: auto;
+    padding-top: initial;
+    padding-bottom: 1.46rem;
+    margin-top: 180px;
+    // margin-bottom: 200px;
+
+    .text-box {
+      margin-top: 1.44rem;
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+    }
   }
 }
 </style>

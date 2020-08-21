@@ -2,7 +2,7 @@
   <div class="funtion-section">
     <ul class="global-width flex-between fuction-list">
       <li v-for="(item,index) in functionArr" :key="index" class="col-md-4 col-sm-12">
-        <span class="img">
+        <span class="img-box">
           <img :src="item.img" :alt="item.desc">
         </span>
         <h6 class="title">{{item.title}}</h6>
@@ -64,11 +64,27 @@ export default {
   .fuction-list {
     flex-wrap: wrap;
   }
+
+  .img-box {
+    display: inline-block;
+    width: 2.76rem;
+    height: 2.76rem;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .desc {
+    padding-bottom: 1.18rem;
+  }
 }
 
 @media (max-width: 769px) {
   .funtion-section {
-    height: 100%;
+    height: auto;
+    padding-top: initial;
+    padding-bottom: initial;
   }
 }
 </style>

@@ -1,9 +1,12 @@
 <template>
   <div class="home">
-    <!-- <FirstScreen/> -->
-    <!-- <FunctionSection/> -->
-    <!-- <FAQ/> -->
+    <FirstScreen/>
+    <FunctionSection/>
+    <FAQdusd/>
     <ExperienceBar/>
+    <FAQdelta/>
+    <Question/>
+    <Forum/>
   </div>
 </template>
 
@@ -11,16 +14,22 @@
 // @ is an alias to /src
 import FirstScreen from "@/components/FirstScreen.vue";
 import FunctionSection from "@/components/FunctionSection.vue";
-import FAQ from "@/components/FAQ.vue";
+import FAQdusd from "@/components/FAQdusd.vue";
+import FAQdelta from "@/components/FAQdelta.vue";
 import ExperienceBar from "@/components/ExperienceBar.vue";
+import Question from "@/components/Question.vue";
+import Forum from "@/components/Forum.vue";
 
 export default {
   name: "Home",
   components: {
     FirstScreen,
     FunctionSection,
-    FAQ,
-    ExperienceBar
+    FAQdusd,
+    ExperienceBar,
+    FAQdelta,
+    Question,
+    Forum
   }
 };
 </script>
