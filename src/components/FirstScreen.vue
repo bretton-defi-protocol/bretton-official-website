@@ -4,16 +4,19 @@
       <app-header-PC/>
       <app-header-Mobile/>
       <div class="main flex">
+        <span class="animatin-icon icon-rectangle02 hide-mobile">
+          <img :src="rectangle02" alt="rectangle">
+        </span>
         <div class="first-banner-left col-md-6 col-sm-12">
           <span class="animatin-icon icon-polygonIcon02 hide-mobile">
             <img :src="polygonIcon02" alt="tusd">
           </span>
-          <h2>Invest for the</h2>
-          <h2>Future.</h2>
-          <p>Delta协议是基于以太坊的标准协议，将铸币、挖矿、锁仓三大功能一体化的去</p>
-          <p>中心化协议。</p>
+          <h2>{{$t('home.maintitle01')}}</h2>
+          <h2>{{$t('home.maintitle02')}}</h2>
+          <p>{{$t('home.text01')}}</p>
+          <p>{{$t('home.text02')}}</p>
           <p class="btn-wrap">
-            <span class="btn-white">查看白皮书</span>
+            <span class="btn-white">{{$t('home.preview')}}</span>
           </p>
 
           <span class="animatin-icon icon-polygonIcon03 hide-mobile">
@@ -83,7 +86,8 @@ export default {
       polygonIcon01: require("@/assets/images/firstBanner/icon-polygon01.png"),
       polygonIcon02: require("@/assets/images/firstBanner/icon-polygon02.png"),
       polygonIcon03: require("@/assets/images/firstBanner/icon-polygon03.png"),
-      rectangleIcon01: require("@/assets/images/firstBanner/icon-rectangle01.png")
+      rectangleIcon01: require("@/assets/images/firstBanner/icon-rectangle01.png"),
+      rectangle02: require("@/assets/images/firstBanner/icon-rectangle02.png")
     };
   },
 
@@ -94,6 +98,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.main {
+  padding-top: 0.9rem;
+}
 .first-banner {
   background: linear-gradient(
     360deg,
@@ -140,6 +147,7 @@ export default {
         color: rgba(253, 38, 124, 1);
         opacity: 1;
         padding: 10px 32px;
+        cursor: pointer;
       }
     }
   }
@@ -203,7 +211,15 @@ export default {
       width: 0.93rem;
       height: 0.93rem;
       right: 0.84rem;
-      bottom: 0.18rem;
+      bottom: -1.2rem;
+      z-index: 0;
+    }
+
+    &.icon-rectangle02 {
+      width: 1.2rem;
+      height: 1.2rem;
+      left: -0.6px;
+      top: 3.38rem;
       z-index: 0;
     }
 
@@ -238,6 +254,9 @@ export default {
   }
 }
 @media (max-width: 768px) {
+  .main {
+    padding-top: 0;
+  }
   .first-banner {
     height: auto;
 
@@ -294,42 +313,42 @@ export default {
 </style>
 <style lang="scss">
 .icon-ovalIcon01 {
-  animation: move01 2s infinite;
+  animation: move01 3s infinite;
 }
 @keyframes move01 {
   0% {
     bottom: 1.42rem;
   }
   50% {
-    bottom: 1.32rem;
+    bottom: 1.26rem;
   }
   100% {
     bottom: 1.42rem;
   }
 }
 .icon-polygonIcon02 {
-  animation: move02 2s infinite;
+  animation: move02 3s infinite;
 }
 @keyframes move02 {
   0% {
     top: 0.43rem;
   }
   50% {
-    top: 0.53rem;
+    top: 0.59rem;
   }
   100% {
     top: 0.43rem;
   }
 }
 .icon-polygonIcon03 {
-  animation: move03 2s infinite;
+  animation: move03 3s infinite;
 }
 @keyframes move03 {
   0% {
     bottom: 0.33rem;
   }
   50% {
-    bottom: 0.2rem;
+    bottom: 0.16rem;
   }
   100% {
     bottom: 0.33rem;
@@ -354,13 +373,13 @@ export default {
 }
 @keyframes move05 {
   0% {
-    bottom: 0.18rem;
+    bottom: -1.2rem;
   }
   50% {
-    bottom: 0.1rem;
+    bottom: -1.4rem;
   }
   100% {
-    bottom: 0.18rem;
+    bottom: -1.2rem;
   }
 }
 .icon-tsud {
@@ -392,7 +411,7 @@ export default {
   }
 }
 .icon-usdc {
-  animation: move08 2s infinite;
+  animation: move08 4s infinite;
 }
 @keyframes move08 {
   0% {
@@ -417,6 +436,34 @@ export default {
   }
   100% {
     bottom: 0.14rem;
+  }
+}
+.icon-oval02 {
+  animation: move010 2s infinite;
+}
+@keyframes move010 {
+  0% {
+    top: 52%;
+  }
+  50% {
+    top: 46%;
+  }
+  100% {
+    top: 52%;
+  }
+}
+.icon-rectangle02 {
+  animation: move011 2s infinite;
+}
+@keyframes move011 {
+  0% {
+    top: 3.38rem;
+  }
+  50% {
+    top: 3.28rem;
+  }
+  100% {
+    top: 3.38rem;
   }
 }
 </style>

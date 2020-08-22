@@ -1,7 +1,7 @@
 <template>
-  <div class="funtion-section">
-    <ul class="global-width flex-between fuction-list">
-      <li v-for="(item,index) in functionArr" :key="index" class="col-md-4 col-sm-12">
+  <div class="funtion-section" id="funtion-section">
+    <ul class="global-width flex-between fuction-list" :class="{show: showUp}">
+      <li v-for="(item,index) in functionArr" :key="index" class="fuction-item col-md-4 col-sm-12">
         <span class="img-box">
           <img :src="item.img" :alt="item.desc">
         </span>
@@ -12,29 +12,40 @@
   </div>
 </template>
 <script>
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "funtion-section",
+  mixins: [ScrollFn],
   data() {
     return {
-      functionArr: [
+      showUp: false
+    };
+  },
+  computed: {
+    functionArr() {
+      return [
         {
-          title: "铸币",
-          desc: "协议用稳定币资产做储备，1:1存入获得dUSD，提高安全性",
+          title: this.$t("functionSection.mintTitle"),
+          desc: this.$t("functionSection.mintDesc"),
           img: require("@/assets/images/function/img-mintage.png")
         },
         {
-          title: "挖矿",
-          desc: "协议代币Delt采用铸币挖矿机制获得，奖励协议生态贡献者",
+          title: this.$t("functionSection.stakingTitle"),
+          desc: this.$t("functionSection.stakingDesc"),
           img: require("@/assets/images/function/img-mining.png")
         },
         {
-          title: "锁仓",
-          desc: "将Delt协议代币锁仓可获得分红池奖励",
-
+          title: this.$t("functionSection.lockTitle"),
+          desc: this.$t("functionSection.lockDesc"),
           img: require("@/assets/images/function/img-lock.png")
         }
-      ]
-    };
+      ];
+    }
+  },
+  methods: {},
+
+  mounted() {
+    this.id = "funtion-section";
   }
 };
 </script>
@@ -63,6 +74,33 @@ export default {
 
   .fuction-list {
     flex-wrap: wrap;
+
+    .fuction-item {
+      position: relative;
+      opacity: 0;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+    }
+
+    &.show {
+      .fuction-item {
+        &:nth-of-type(1) {
+          animation-name: showUp;
+          animation-delay: 0;
+        }
+
+        &:nth-of-type(2) {
+          animation-name: showUp;
+          animation-delay: 0.5s;
+        }
+
+        &:nth-of-type(3) {
+          animation-name: showUp;
+          animation-delay: 1s;
+        }
+      }
+    }
   }
 
   .img-box {
@@ -77,6 +115,16 @@ export default {
 
   .desc {
     padding-bottom: 1.18rem;
+  }
+
+  @keyframes showUp {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
   }
 }
 

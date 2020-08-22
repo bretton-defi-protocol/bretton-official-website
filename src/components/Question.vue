@@ -1,82 +1,88 @@
 <template>
-  <div class="question">
+  <div class="question" id="question-section" :class="{show: showUp}">
     <div class="global-width question-wrap">
-      <h4 class="section-title">常见问题</h4>
-      <ul class="question-list">
-        <li
-          v-for="(item, index) in questionArr"
-          :key="index"
-          class="question-item"
-          :class="{active: activeIndex == index}"
-          @click="changeActiveItem(item, index)"
-        >
-          <span class="icon-arrow">
-            <img :src="arrowUp" alt="arrowUp" v-if="activeIndex !== index">
-            <img :src="arrowDown" alt="arrowDown" v-if="activeIndex == index">
-          </span>
-          <div class="text-box">
-            <div class="item-header">{{ item.title }}</div>
-            <div class="item-body" v-if="activeIndex == index">{{ item.text }}</div>
-          </div>
-        </li>
-        <p class="tip">
-          如有更多问题，请点击
-          <a class="link">更多帮助</a>
-        </p>
+      <h4 class="section-title">{{ $t('question.questionTitle')}}</h4>
+      <transition name="slide-fade">
+        <ul class="question-list">
+          <li
+            v-for="(item, index) in questionArr"
+            :key="index"
+            class="question-item"
+            :class="{active: activeIndex == index}"
+            @click="changeActiveItem(item, index)"
+          >
+            <span class="icon-arrow">
+              <img :src="arrowUp" alt="arrowUp" v-if="activeIndex !== index">
+              <img :src="arrowDown" alt="arrowDown" v-if="activeIndex == index">
+            </span>
+            <div class="text-box">
+              <div class="item-header">{{ item.title }}</div>
+              <div class="item-body" v-if="activeIndex == index">{{ item.text }}</div>
+            </div>
+          </li>
+          <p class="tip">
+            {{ $t('question.more')}}
+            <a class="link">{{ $t('question.moreLink')}}</a>
+          </p>
 
-        <div class="bottom-img"></div>
-      </ul>
+          <div class="bottom-img"></div>
+        </ul>
+      </transition>
     </div>
   </div>
 </template>
 <script>
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "question",
+  mixins: [ScrollFn],
 
   data() {
     return {
-      questionArr: [
-        {
-          title: "使用 DELTA 协议前，需要准备什么？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
-        },
-        {
-          title: "怎么销毁 dUSD 获得稳定币资产？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
-        },
-        {
-          title: "如何在 DELTA 生态中挖矿？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
-        },
-        {
-          title: "如何在 DELTA 生态中兑换稳定币？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
-        },
-        {
-          title: "如何使用 DELT 赚取收益？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
-        },
-        {
-          title: "这是第二个问题",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
-        }
-      ],
       arrowUp: require("@/assets/images/question/icon-arrow-up.png"),
       arrowDown: require("@/assets/images/question/icon-arrow-down.png"),
       activeIndex: 1
     };
   },
 
+  computed: {
+    questionArr() {
+      return [
+        {
+          title: this.$t("question.item01Title"),
+          text: this.$t("question.item01Desc")
+        },
+        {
+          title: this.$t("question.item02Title"),
+          text: this.$t("question.item02Desc")
+        },
+        {
+          title: this.$t("question.item03Ttile"),
+          text: this.$t("question.item03Desc")
+        },
+        {
+          title: this.$t("question.item04Title"),
+          text: this.$t("question.item04Desc")
+        },
+        {
+          title: this.$t("question.item05Title"),
+          text: this.$t("question.item05Desc")
+        },
+        {
+          title: this.$t("question.item06Title"),
+          text: this.$t("question.item06Desc")
+        }
+      ];
+    }
+  },
+
   methods: {
     changeActiveItem(item, index) {
       this.activeIndex = index;
     }
+  },
+  mounted() {
+    this.id = "question-section";
   }
 };
 </script>
@@ -104,9 +110,13 @@ export default {
       rgba(239, 242, 246, 0) 0%,
       rgba(239, 242, 246, 1) 100%
     );
-    opacity: 1;
     margin-bottom: 0.2rem;
     text-align: left;
+    opacity: 0;
+    transform: translate(-500px, 0);
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
 
     &.active {
       background: rgba(253, 38, 124, 0.01);
@@ -130,6 +140,41 @@ export default {
 
     .text-box {
       flex: 2;
+    }
+  }
+
+  &.show {
+    .question-item {
+      animation-name: showQuestionItem;
+      &:nth-of-type(1) {
+        animation-delay: 0;
+      }
+      &:nth-of-type(2) {
+        animation-delay: 0.4s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 0.8s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: 1.2s;
+      }
+      &:nth-of-type(5) {
+        animation-delay: 1.6s;
+      }
+      &:nth-of-type(6) {
+        animation-delay: 2s;
+      }
+    }
+  }
+
+  @keyframes showQuestionItem {
+    0% {
+      opacity: 0;
+      transform: translate(-500px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
     }
   }
 
@@ -159,6 +204,10 @@ export default {
 
   .question-list {
     position: relative;
+
+    .question-item {
+      cursor: pointer;
+    }
   }
 }
 
@@ -166,6 +215,7 @@ export default {
   .question {
     height: auto;
     padding-top: initial;
+    padding-bottom: 2.4rem;
 
     &-list {
       margin-left: 0.24rem;

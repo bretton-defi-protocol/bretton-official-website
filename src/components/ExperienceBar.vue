@@ -1,41 +1,75 @@
 <template>
-  <div class="experience-bar">
+  <div class="experience-bar" id="experience-bar" :class="{show: showUp}">
     <div class="global-width experience-bar-wrap">
       <p class="text text-desktop">
         <span>
-          已铸币挖矿
-          <i class="num">{{ mintVal}}</i>DELT,
+          {{ $t("experienceBar.minted")}}
+          <!-- <i class="num">{{ mintVal}}</i> -->
+          <countTo
+            ref="countTo01"
+            class="num"
+            :autoplay="false"
+            :startVal="0"
+            :endVal="mintVal"
+            :duration="3000"
+          ></countTo>DELT,
         </span>
         <span>
-          已获得分红收益
-          <i class="num">${{ delta}}</i> DELT
+          {{ $t("experienceBar.benefit")}}
+          <i class="num">$</i>
+          <countTo
+            ref="countTo02"
+            class="num"
+            :autoplay="false"
+            :startVal="0"
+            :endVal="delta"
+            :duration="3000"
+          ></countTo>DELT
         </span>
       </p>
 
       <div class="text text-mobile">
         <p>
-          已铸币挖矿
+          {{ $t('experienceBar.minted')}}
           <i class="num">{{ mintVal}}</i>DELT,
         </p>
         <p>
-          已获得分红收益
+          {{ $t('experienceBar.benefit')}}
           <i class="num">${{ delta}}</i> DELT
         </p>
       </div>
-      <p>
-        <span class="btn-experience">开始体验</span>
+      <p class="btn-experience-bar">
+        <span class="btn-experience">{{ $t('experienceBar.btnExperience')}}</span>
       </p>
     </div>
   </div>
 </template>
 <script>
+import countTo from "vue-count-to";
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "experience-bar",
+  components: { countTo },
+  mixins: [ScrollFn],
+
   data() {
     return {
-      mintVal: "76556",
-      delta: "7633.8666"
+      mintVal: 76556,
+      delta: 7633.86
     };
+  },
+
+  mounted() {
+    this.id = "experience-bar";
+  },
+
+  watch: {
+    showUp(newVal, oldVal) {
+      if (newVal) {
+        this.$refs.countTo01.start();
+        this.$refs.countTo02.start();
+      }
+    }
   }
 };
 </script>
@@ -71,16 +105,39 @@ export default {
     }
   }
 
-  .btn-experience {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    color: rgba(253, 38, 124, 1);
-    opacity: 1;
-    padding: 12px 40px;
-    background: rgba(255, 255, 255, 1);
-    opacity: 1;
-    border-radius: 20px;
+  .btn-experience-bar {
+    opacity: 0;
+    animation-duration: 2s;
+    transform: translate(0, 100px);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    > span {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      color: rgba(253, 38, 124, 1);
+      padding: 12px 40px;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+
+  @keyframes showBtn {
+    0% {
+      opacity: 0;
+      transform: translate(0, 100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+
+  &.show {
+    .btn-experience-bar {
+      animation-name: showBtn;
+    }
   }
 
   .num {

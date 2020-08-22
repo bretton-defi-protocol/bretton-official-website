@@ -1,5 +1,5 @@
 <template>
-  <div class="faq faq-delta">
+  <div class="faq faq-delta" :class="{show: showUp}" id="faq-delta">
     <div class="global-width flex-between faq-wrap">
       <div class="faq-left col-md-6 col-sm-12">
         <span class="faq-img-box">
@@ -8,10 +8,12 @@
       </div>
       <div class="faq-right col-md-6 col-sm-12">
         <div class="text-box">
-          <h5 class="title">我可以使用 DELTA 协议做什么？</h5>
+          <h5 class="title">{{ $t('faqForDelta.whatdelta')}}</h5>
           <ul>
             <li v-for="(item,index) in deltaFaq" :key="index" class="faq-item">
-              <i class="dot"></i>
+              <i class="dot">
+                <img :src="iconoval" alt>
+              </i>
               <p>{{ item.text }}</p>
             </li>
           </ul>
@@ -21,36 +23,52 @@
   </div>
 </template>
 <script>
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "faq-delta",
+  mixins: [ScrollFn],
 
   data() {
     return {
       deltaImg: require("@/assets/images/faq/delta-img.png"),
-      deltaFaq: [
-        {
-          text: "用您的稳定币 铸币 生成 dUSD"
-        },
-        {
-          text: "持有您的 dUSD 来 挖矿 ，获得我们的协议代币 DELT"
-        },
-        {
-          text: "1:1无滑点地 兑换 稳定币"
-        },
-        {
-          text: "销毁 您的 dUSD 换成您需要的稳定币"
-        },
-        {
-          text: "锁仓 DELT 获得收益"
-        }
-      ]
+      iconoval: require("@/assets/images/faq/icon-oval.png")
     };
+  },
+
+  computed: {
+    deltaFaq() {
+      return [
+        {
+          text: this.$t("faqForDelta.deltadesc01")
+        },
+        {
+          text: this.$t("faqForDelta.deltadesc02")
+        },
+        {
+          text: this.$t("faqForDelta.deltadesc03")
+        },
+        {
+          text: this.$t("faqForDelta.deltadesc04")
+        },
+        {
+          text: this.$t("faqForDelta.deltadesc05")
+        }
+      ];
+    }
+  },
+
+  mounted() {
+    this.id = "faq-delta";
   }
 };
 </script>
 <style lang="scss" scoped>
 .faq-delta {
   background-image: initial;
+  margin-top: 1.3rem;
+  padding-bottom: 1.2rem;
+  height: auto;
+
   .faq-img-box {
     position: relative;
     right: -88px;
@@ -59,18 +77,65 @@ export default {
 
   .text-box {
     width: initial;
+    margin-left: 0.28rem;
   }
 
-  .faq-left {
-    order: 2;
+  .dot {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 12px;
 
-    .faq-img-box {
-      right: initial;
-      top: initial;
+    img {
+      max-width: 100%;
     }
   }
+
+  .faq-item {
+    display: flex;
+  }
+
+  .title {
+    margin-bottom: 0.32rem;
+  }
+
+  .faq-left,
   .faq-right {
-    order: 1;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+
+  &.show {
+    .faq-right {
+      animation-name: showFaqRight;
+    }
+    .faq-left {
+      animation-name: showFaqLeft;
+    }
+  }
+
+  @keyframes showFaqRight {
+    0% {
+      opacity: 0;
+      transform: translate(100px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes showFaqLeft {
+    0% {
+      opacity: 0;
+      transform: translate(-100px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
   }
 }
 
@@ -80,6 +145,19 @@ export default {
 
     .text-box {
       margin-bottom: initial;
+      margin-left: 0;
+    }
+    .faq-left {
+      order: 2;
+      margin-top: 0.3rem;
+
+      .faq-img-box {
+        right: initial;
+        top: initial;
+      }
+    }
+    .faq-right {
+      order: 1;
     }
   }
 }

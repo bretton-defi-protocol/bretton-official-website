@@ -10,14 +10,19 @@
         <img :src="navBtnIcon" alt>
       </span>
     </div>
-    <div class="popover-nav popover" v-if="showPopoverNav">
-      <p
-        v-for="(item,index) in navArr"
-        :key="index"
-        :class="{active: index ===  activeIndex}"
-        @click="switchItem(item, index)"
-      >{{ item.text }}</p>
-    </div>
+    <transition name="fade">
+      <div class="popover-nav popover" v-if="showPopoverNav">
+        <p
+          v-for="(item,index) in navArr"
+          :key="index"
+          :class="{active: index ===  activeIndex}"
+          @click="switchItem(item, index)"
+          class="nav-item"
+        >{{ item.text }}</p>
+        <p v-if="lang == 'zh-CN'" @click="switchLang">English</p>
+        <p v-else @click="switchLang">切换中文</p>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
@@ -29,14 +34,18 @@ export default {
       logoMobile: require("@/assets/images/header/mobile-logo.png"),
       navBtnIcon: require("@/assets/images/header/nav-btn.png"),
       activeIndex: 0,
-      navArr: [
-        { id: "00", text: "首页" },
-        { id: "01", text: "论坛" },
-        { id: "02", text: "合作" },
-        { id: "03", text: "切换语言" }
-      ],
-      showPopoverNav: false
+      showPopoverNav: false,
+      lang: localStorage.getItem("lang") || "zh-CN"
     };
+  },
+  computed: {
+    navArr() {
+      return [
+        { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
+        { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
+        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" }
+      ];
+    }
   },
 
   methods: {
@@ -47,9 +56,19 @@ export default {
     switchItem(item, index) {
       this.activeIndex = index;
       this.showPopoverNav = false;
+    },
 
-      if (index == 3) {
+    switchLang() {
+      if (this.lang === "zh-CN") {
+        this.lang = "en-Us";
+        this.$i18n.locale = this.lang;
+        localStorage.setItem("lang", this.lang);
+      } else {
+        this.lang = "zh-CN";
+        this.$i18n.locale = this.lang;
+        localStorage.setItem("lang", this.lang);
       }
+      this.showPopoverNav = false;
     }
   }
 };
@@ -79,6 +98,7 @@ export default {
 
   .nav-btn {
     position: relative;
+    cursor: pointer;
   }
 
   .popover-nav {
@@ -89,6 +109,10 @@ export default {
     top: 1.2rem;
     max-width: 88%;
     z-index: 999;
+  }
+
+  .nav-item {
+    cursor: pointer;
   }
 }
 </style>
