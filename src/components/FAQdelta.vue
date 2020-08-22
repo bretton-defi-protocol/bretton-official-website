@@ -77,6 +77,7 @@ export default {
 
   .text-box {
     width: initial;
+    margin-left: 0.28rem;
   }
 
   .dot {
@@ -144,6 +145,7 @@ export default {
 
     .text-box {
       margin-bottom: initial;
+      margin-left: 0;
     }
     .faq-left {
       order: 2;

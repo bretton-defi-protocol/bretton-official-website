@@ -71,6 +71,7 @@ export default {
   .faq-img-box {
     width: 606px;
     height: 400px;
+    display: inline-block;
 
     img {
       max-width: 100%;

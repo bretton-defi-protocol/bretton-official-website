@@ -4,6 +4,9 @@
       <app-header-PC/>
       <app-header-Mobile/>
       <div class="main flex">
+        <span class="animatin-icon icon-rectangle02 hide-mobile">
+          <img :src="rectangle02" alt="rectangle">
+        </span>
         <div class="first-banner-left col-md-6 col-sm-12">
           <span class="animatin-icon icon-polygonIcon02 hide-mobile">
             <img :src="polygonIcon02" alt="tusd">
@@ -83,7 +86,8 @@ export default {
       polygonIcon01: require("@/assets/images/firstBanner/icon-polygon01.png"),
       polygonIcon02: require("@/assets/images/firstBanner/icon-polygon02.png"),
       polygonIcon03: require("@/assets/images/firstBanner/icon-polygon03.png"),
-      rectangleIcon01: require("@/assets/images/firstBanner/icon-rectangle01.png")
+      rectangleIcon01: require("@/assets/images/firstBanner/icon-rectangle01.png"),
+      rectangle02: require("@/assets/images/firstBanner/icon-rectangle02.png")
     };
   },
 
@@ -211,6 +215,14 @@ export default {
       z-index: 0;
     }
 
+    &.icon-rectangle02 {
+      width: 1.2rem;
+      height: 1.2rem;
+      left: -0.6px;
+      top: 3.38rem;
+      z-index: 0;
+    }
+
     &.icon-oval02 {
       top: 52%;
       right: -18%;
@@ -329,7 +341,7 @@ export default {
   }
 }
 .icon-polygonIcon03 {
-  animation: move03 2s infinite;
+  animation: move03 3s infinite;
 }
 @keyframes move03 {
   0% {
@@ -438,6 +450,20 @@ export default {
   }
   100% {
     top: 52%;
+  }
+}
+.icon-rectangle02 {
+  animation: move011 2s infinite;
+}
+@keyframes move011 {
+  0% {
+    top: 3.38rem;
+  }
+  50% {
+    top: 3.28rem;
+  }
+  100% {
+    top: 3.38rem;
   }
 }
 </style>

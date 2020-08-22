@@ -2,30 +2,32 @@
   <div class="question" id="question-section" :class="{show: showUp}">
     <div class="global-width question-wrap">
       <h4 class="section-title">{{ $t('question.questionTitle')}}</h4>
-      <ul class="question-list">
-        <li
-          v-for="(item, index) in questionArr"
-          :key="index"
-          class="question-item"
-          :class="{active: activeIndex == index}"
-          @click="changeActiveItem(item, index)"
-        >
-          <span class="icon-arrow">
-            <img :src="arrowUp" alt="arrowUp" v-if="activeIndex !== index">
-            <img :src="arrowDown" alt="arrowDown" v-if="activeIndex == index">
-          </span>
-          <div class="text-box">
-            <div class="item-header">{{ item.title }}</div>
-            <div class="item-body" v-if="activeIndex == index">{{ item.text }}</div>
-          </div>
-        </li>
-        <p class="tip">
-          {{ $t('question.more')}}
-          <a class="link">{{ $t('question.moreLink')}}</a>
-        </p>
+      <transition name="slide-fade">
+        <ul class="question-list">
+          <li
+            v-for="(item, index) in questionArr"
+            :key="index"
+            class="question-item"
+            :class="{active: activeIndex == index}"
+            @click="changeActiveItem(item, index)"
+          >
+            <span class="icon-arrow">
+              <img :src="arrowUp" alt="arrowUp" v-if="activeIndex !== index">
+              <img :src="arrowDown" alt="arrowDown" v-if="activeIndex == index">
+            </span>
+            <div class="text-box">
+              <div class="item-header">{{ item.title }}</div>
+              <div class="item-body" v-if="activeIndex == index">{{ item.text }}</div>
+            </div>
+          </li>
+          <p class="tip">
+            {{ $t('question.more')}}
+            <a class="link">{{ $t('question.moreLink')}}</a>
+          </p>
 
-        <div class="bottom-img"></div>
-      </ul>
+          <div class="bottom-img"></div>
+        </ul>
+      </transition>
     </div>
   </div>
 </template>
@@ -202,6 +204,10 @@ export default {
 
   .question-list {
     position: relative;
+
+    .question-item {
+      cursor: pointer;
+    }
   }
 }
 
