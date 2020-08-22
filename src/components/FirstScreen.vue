@@ -8,12 +8,12 @@
           <span class="animatin-icon icon-polygonIcon02 hide-mobile">
             <img :src="polygonIcon02" alt="tusd">
           </span>
-          <h2>Invest for the</h2>
-          <h2>Future.</h2>
-          <p>Delta协议是基于以太坊的标准协议，将铸币、挖矿、锁仓三大功能一体化的去</p>
-          <p>中心化协议。</p>
+          <h2>{{$t('home.maintitle01')}}</h2>
+          <h2>{{$t('home.maintitle02')}}</h2>
+          <p>{{$t('home.text01')}}</p>
+          <p>{{$t('home.text02')}}</p>
           <p class="btn-wrap">
-            <span class="btn-white">查看白皮书</span>
+            <span class="btn-white">{{$t('home.preview')}}</span>
           </p>
 
           <span class="animatin-icon icon-polygonIcon03 hide-mobile">

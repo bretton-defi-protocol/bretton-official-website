@@ -30,10 +30,10 @@ export default {
       navBtnIcon: require("@/assets/images/header/nav-btn.png"),
       activeIndex: 0,
       navArr: [
-        { id: "00", text: "首页" },
-        { id: "01", text: "论坛" },
-        { id: "02", text: "合作" },
-        { id: "03", text: "切换语言" }
+        { id: "00", text: this.$t("nav.home") },
+        { id: "01", text: this.$t("nav.forum") },
+        { id: "02", text: this.$t("nav.coporation") },
+        { id: "03", text: this.$t("nav.switchText") }
       ],
       showPopoverNav: false
     };

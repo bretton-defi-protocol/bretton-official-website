@@ -1,7 +1,7 @@
 <template>
   <div class="question">
     <div class="global-width question-wrap">
-      <h4 class="section-title">常见问题</h4>
+      <h4 class="section-title">{{ $t('question.questionTitle')}}</h4>
       <ul class="question-list">
         <li
           v-for="(item, index) in questionArr"
@@ -20,8 +20,8 @@
           </div>
         </li>
         <p class="tip">
-          如有更多问题，请点击
-          <a class="link">更多帮助</a>
+          {{ $t('question.more')}}
+          <a class="link">{{ $t('question.moreLink')}}</a>
         </p>
 
         <div class="bottom-img"></div>
@@ -37,34 +37,28 @@ export default {
     return {
       questionArr: [
         {
-          title: "使用 DELTA 协议前，需要准备什么？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
+          title: this.$t("question.item01Title"),
+          text: this.$t("question.item01Desc")
         },
         {
-          title: "怎么销毁 dUSD 获得稳定币资产？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
+          title: this.$t("question.item02Title"),
+          text: this.$t("question.item02Desc")
         },
         {
-          title: "如何在 DELTA 生态中挖矿？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
+          title: this.$t("question.item03Ttile"),
+          text: this.$t("question.item03Desc")
         },
         {
-          title: "如何在 DELTA 生态中兑换稳定币？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
+          title: this.$t("question.item04Title"),
+          text: this.$t("question.item04Desc")
         },
         {
-          title: "如何使用 DELT 赚取收益？",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
+          title: this.$t("question.item05Title"),
+          text: this.$t("question.item05Desc")
         },
         {
-          title: "这是第二个问题",
-          text:
-            "ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）"
+          title: this.$t("question.item06Title"),
+          text: this.$t("question.item06Desc")
         }
       ],
       arrowUp: require("@/assets/images/question/icon-arrow-up.png"),

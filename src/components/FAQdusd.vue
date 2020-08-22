@@ -3,10 +3,8 @@
     <div class="global-width flex-between faq-wrap">
       <div class="faq-left col-md-6 col-sm-12">
         <div class="text-box">
-          <h5 class="title">什么是dUSD</h5>
-          <p
-            class="para"
-          >稳定币dUSD是一种锚定美元的资产担保型加密数字货币。dUSD是在以太坊上发行的ERC20代币，其目标价格1:1锚定美元，有大量的钱包、交易所等生态支持。</p>
+          <h5 class="title">{{$t('faqFordUSD.whatdUSD')}}</h5>
+          <p class="para">{{$t('faqFordUSD.duSDdesc')}}</p>
         </div>
       </div>
       <div class="faq-right col-md-6 col-sm-12">

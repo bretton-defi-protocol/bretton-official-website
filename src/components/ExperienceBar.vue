@@ -3,27 +3,27 @@
     <div class="global-width experience-bar-wrap">
       <p class="text text-desktop">
         <span>
-          已铸币挖矿
+          {{ $t("experienceBar.minted")}}
           <i class="num">{{ mintVal}}</i>DELT,
         </span>
         <span>
-          已获得分红收益
+          {{ $t("experienceBar.benefit")}}
           <i class="num">${{ delta}}</i> DELT
         </span>
       </p>
 
       <div class="text text-mobile">
         <p>
-          已铸币挖矿
+          {{ $t('experienceBar.minted')}}
           <i class="num">{{ mintVal}}</i>DELT,
         </p>
         <p>
-          已获得分红收益
+          {{ $t('experienceBar.benefit')}}
           <i class="num">${{ delta}}</i> DELT
         </p>
       </div>
       <p>
-        <span class="btn-experience">开始体验</span>
+        <span class="btn-experience">{{ $t('experienceBar.btnExperience')}}</span>
       </p>
     </div>
   </div>

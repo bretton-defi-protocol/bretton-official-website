@@ -3,19 +3,19 @@
     <div class="forum-container">
       <div class="global-width forum-wrap">
         <div class="text-box">
-          <p>论坛</p>
+          <p>{{$t('forum.forumTitle')}}</p>
           <p>
-            <span class="go-forum">前往论坛</span>
+            <span class="go-forum">{{$t('forum.goForum')}}</span>
           </p>
         </div>
       </div>
     </div>
-    <p class="contact" id="contact">与我们合作</p>
+    <p class="contact" id="contact">{{$t('forum.coporation')}}</p>
     <p class="email">
       <span>1196651331@qq.com</span>
     </p>
     <div class="copyright">
-      <p>Copyright © 2020 ******服务集团</p>
+      <p>{{$t('copyright.tip')}}</p>
     </div>
   </div>
 </template>

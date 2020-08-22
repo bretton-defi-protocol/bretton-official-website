@@ -18,19 +18,18 @@ export default {
     return {
       functionArr: [
         {
-          title: "铸币",
-          desc: "协议用稳定币资产做储备，1:1存入获得dUSD，提高安全性",
+          title: this.$t("functionSection.mintTitle"),
+          desc: this.$t("functionSection.mintDesc"),
           img: require("@/assets/images/function/img-mintage.png")
         },
         {
-          title: "挖矿",
-          desc: "协议代币Delt采用铸币挖矿机制获得，奖励协议生态贡献者",
+          title: this.$t("functionSection.stakingTitle"),
+          desc: this.$t("functionSection.stakingDesc"),
           img: require("@/assets/images/function/img-mining.png")
         },
         {
-          title: "锁仓",
-          desc: "将Delt协议代币锁仓可获得分红池奖励",
-
+          title: this.$t("functionSection.lockTitle"),
+          desc: this.$t("functionSection.lockDesc"),
           img: require("@/assets/images/function/img-lock.png")
         }
       ]

@@ -8,7 +8,7 @@
       </div>
       <div class="faq-right col-md-6 col-sm-12">
         <div class="text-box">
-          <h5 class="title">我可以使用 DELTA 协议做什么？</h5>
+          <h5 class="title">{{ $t('faqForDelta.whatdelta')}}</h5>
           <ul>
             <li v-for="(item,index) in deltaFaq" :key="index" class="faq-item">
               <i class="dot"></i>
@@ -29,19 +29,19 @@ export default {
       deltaImg: require("@/assets/images/faq/delta-img.png"),
       deltaFaq: [
         {
-          text: "用您的稳定币 铸币 生成 dUSD"
+          text: this.$t("faqForDelta.deltadesc01")
         },
         {
-          text: "持有您的 dUSD 来 挖矿 ，获得我们的协议代币 DELT"
+          text: this.$t("faqForDelta.deltadesc02")
         },
         {
-          text: "1:1无滑点地 兑换 稳定币"
+          text: this.$t("faqForDelta.deltadesc03")
         },
         {
-          text: "销毁 您的 dUSD 换成您需要的稳定币"
+          text: this.$t("faqForDelta.deltadesc04")
         },
         {
-          text: "锁仓 DELT 获得收益"
+          text: this.$t("faqForDelta.deltadesc05")
         }
       ]
     };
