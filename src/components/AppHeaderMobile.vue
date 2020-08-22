@@ -17,6 +17,8 @@
         :class="{active: index ===  activeIndex}"
         @click="switchItem(item, index)"
       >{{ item.text }}</p>
+      <p v-if="lang == 'zh-CN'" @click="switchLang">English</p>
+      <p v-else @click="switchLang">切换中文</p>
     </div>
   </div>
 </template>
@@ -29,7 +31,8 @@ export default {
       logoMobile: require("@/assets/images/header/mobile-logo.png"),
       navBtnIcon: require("@/assets/images/header/nav-btn.png"),
       activeIndex: 0,
-      showPopoverNav: false
+      showPopoverNav: false,
+      lang: localStorage.getItem("lang") || "zh-CN"
     };
   },
   computed: {
@@ -37,8 +40,7 @@ export default {
       return [
         { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
         { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
-        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" },
-        { id: "03", text: this.$t("nav.switchText") }
+        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" }
       ];
     }
   },
@@ -51,9 +53,19 @@ export default {
     switchItem(item, index) {
       this.activeIndex = index;
       this.showPopoverNav = false;
+    },
 
-      if (index == 3) {
+    switchLang() {
+      if (this.lang === "zh-CN") {
+        this.lang = "en-Us";
+        this.$i18n.locale = this.lang;
+        localStorage.setItem("lang", this.lang);
+      } else {
+        this.lang = "zh-CN";
+        this.$i18n.locale = this.lang;
+        localStorage.setItem("lang", this.lang);
       }
+      this.showPopoverNav = false;
     }
   }
 };

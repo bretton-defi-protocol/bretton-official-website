@@ -11,7 +11,9 @@
           <h5 class="title">{{ $t('faqForDelta.whatdelta')}}</h5>
           <ul>
             <li v-for="(item,index) in deltaFaq" :key="index" class="faq-item">
-              <i class="dot"></i>
+              <i class="dot">
+                <img :src="iconoval" alt>
+              </i>
               <p>{{ item.text }}</p>
             </li>
           </ul>
@@ -26,7 +28,8 @@ export default {
 
   data() {
     return {
-      deltaImg: require("@/assets/images/faq/delta-img.png")
+      deltaImg: require("@/assets/images/faq/delta-img.png"),
+      iconoval: require("@/assets/images/faq/icon-oval.png")
     };
   },
 
@@ -56,6 +59,10 @@ export default {
 <style lang="scss" scoped>
 .faq-delta {
   background-image: initial;
+  margin-top: 1.3rem;
+  padding-bottom: 1.2rem;
+  height: auto;
+
   .faq-img-box {
     position: relative;
     right: -88px;
@@ -66,16 +73,23 @@ export default {
     width: initial;
   }
 
-  .faq-left {
-    order: 2;
+  .dot {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 12px;
 
-    .faq-img-box {
-      right: initial;
-      top: initial;
+    img {
+      max-width: 100%;
     }
   }
-  .faq-right {
-    order: 1;
+
+  .faq-item {
+    display: flex;
+  }
+
+  .title {
+    margin-bottom: 0.32rem;
   }
 }
 
@@ -85,6 +99,18 @@ export default {
 
     .text-box {
       margin-bottom: initial;
+    }
+    .faq-left {
+      order: 2;
+      margin-top: 0.3rem;
+
+      .faq-img-box {
+        right: initial;
+        top: initial;
+      }
+    }
+    .faq-right {
+      order: 1;
     }
   }
 }

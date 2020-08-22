@@ -165,6 +165,7 @@ export default {
   .question {
     height: auto;
     padding-top: initial;
+    padding-bottom: 2.4rem;
 
     &-list {
       margin-left: 0.24rem;
