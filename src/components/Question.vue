@@ -1,5 +1,5 @@
 <template>
-  <div class="question">
+  <div class="question" id="question-section" :class="{show: showUp}">
     <div class="global-width question-wrap">
       <h4 class="section-title">{{ $t('question.questionTitle')}}</h4>
       <ul class="question-list">
@@ -30,8 +30,10 @@
   </div>
 </template>
 <script>
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "question",
+  mixins: [ScrollFn],
 
   data() {
     return {
@@ -76,6 +78,9 @@ export default {
     changeActiveItem(item, index) {
       this.activeIndex = index;
     }
+  },
+  mounted() {
+    this.id = "question-section";
   }
 };
 </script>
@@ -103,9 +108,13 @@ export default {
       rgba(239, 242, 246, 0) 0%,
       rgba(239, 242, 246, 1) 100%
     );
-    opacity: 1;
     margin-bottom: 0.2rem;
     text-align: left;
+    opacity: 0;
+    transform: translate(-500px, 0);
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
 
     &.active {
       background: rgba(253, 38, 124, 0.01);
@@ -129,6 +138,41 @@ export default {
 
     .text-box {
       flex: 2;
+    }
+  }
+
+  &.show {
+    .question-item {
+      animation-name: showQuestionItem;
+      &:nth-of-type(1) {
+        animation-delay: 0;
+      }
+      &:nth-of-type(2) {
+        animation-delay: 0.4s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 0.8s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: 1.2s;
+      }
+      &:nth-of-type(5) {
+        animation-delay: 1.6s;
+      }
+      &:nth-of-type(6) {
+        animation-delay: 2s;
+      }
+    }
+  }
+
+  @keyframes showQuestionItem {
+    0% {
+      opacity: 0;
+      transform: translate(-500px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
     }
   }
 

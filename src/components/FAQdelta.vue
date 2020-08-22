@@ -1,5 +1,5 @@
 <template>
-  <div class="faq faq-delta">
+  <div class="faq faq-delta" :class="{show: showUp}" id="faq-delta">
     <div class="global-width flex-between faq-wrap">
       <div class="faq-left col-md-6 col-sm-12">
         <span class="faq-img-box">
@@ -23,8 +23,10 @@
   </div>
 </template>
 <script>
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "faq-delta",
+  mixins: [ScrollFn],
 
   data() {
     return {
@@ -53,6 +55,10 @@ export default {
         }
       ];
     }
+  },
+
+  mounted() {
+    this.id = "faq-delta";
   }
 };
 </script>
@@ -90,6 +96,45 @@ export default {
 
   .title {
     margin-bottom: 0.32rem;
+  }
+
+  .faq-left,
+  .faq-right {
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+
+  &.show {
+    .faq-right {
+      animation-name: showFaqRight;
+    }
+    .faq-left {
+      animation-name: showFaqLeft;
+    }
+  }
+
+  @keyframes showFaqRight {
+    0% {
+      opacity: 0;
+      transform: translate(100px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes showFaqLeft {
+    0% {
+      opacity: 0;
+      transform: translate(-100px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
   }
 }
 

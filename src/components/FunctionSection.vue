@@ -1,7 +1,7 @@
 <template>
-  <div class="funtion-section">
-    <ul class="global-width flex-between fuction-list">
-      <li v-for="(item,index) in functionArr" :key="index" class="col-md-4 col-sm-12">
+  <div class="funtion-section" id="funtion-section">
+    <ul class="global-width flex-between fuction-list" :class="{show: showUp}">
+      <li v-for="(item,index) in functionArr" :key="index" class="fuction-item col-md-4 col-sm-12">
         <span class="img-box">
           <img :src="item.img" :alt="item.desc">
         </span>
@@ -12,10 +12,14 @@
   </div>
 </template>
 <script>
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "funtion-section",
+  mixins: [ScrollFn],
   data() {
-    return {};
+    return {
+      showUp: false
+    };
   },
   computed: {
     functionArr() {
@@ -37,6 +41,11 @@ export default {
         }
       ];
     }
+  },
+  methods: {},
+
+  mounted() {
+    this.id = "funtion-section";
   }
 };
 </script>
@@ -65,6 +74,33 @@ export default {
 
   .fuction-list {
     flex-wrap: wrap;
+
+    .fuction-item {
+      position: relative;
+      opacity: 0;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+    }
+
+    &.show {
+      .fuction-item {
+        &:nth-of-type(1) {
+          animation-name: showUp;
+          animation-delay: 0;
+        }
+
+        &:nth-of-type(2) {
+          animation-name: showUp;
+          animation-delay: 0.5s;
+        }
+
+        &:nth-of-type(3) {
+          animation-name: showUp;
+          animation-delay: 1s;
+        }
+      }
+    }
   }
 
   .img-box {
@@ -79,6 +115,16 @@ export default {
 
   .desc {
     padding-bottom: 1.18rem;
+  }
+
+  @keyframes showUp {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
   }
 }
 

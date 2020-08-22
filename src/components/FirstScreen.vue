@@ -94,6 +94,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.main {
+  padding-top: 0.9rem;
+}
 .first-banner {
   background: linear-gradient(
     360deg,
@@ -140,6 +143,7 @@ export default {
         color: rgba(253, 38, 124, 1);
         opacity: 1;
         padding: 10px 32px;
+        cursor: pointer;
       }
     }
   }
@@ -203,7 +207,7 @@ export default {
       width: 0.93rem;
       height: 0.93rem;
       right: 0.84rem;
-      bottom: 0.18rem;
+      bottom: -1.2rem;
       z-index: 0;
     }
 
@@ -238,6 +242,9 @@ export default {
   }
 }
 @media (max-width: 768px) {
+  .main {
+    padding-top: 0;
+  }
   .first-banner {
     height: auto;
 
@@ -294,28 +301,28 @@ export default {
 </style>
 <style lang="scss">
 .icon-ovalIcon01 {
-  animation: move01 2s infinite;
+  animation: move01 3s infinite;
 }
 @keyframes move01 {
   0% {
     bottom: 1.42rem;
   }
   50% {
-    bottom: 1.32rem;
+    bottom: 1.26rem;
   }
   100% {
     bottom: 1.42rem;
   }
 }
 .icon-polygonIcon02 {
-  animation: move02 2s infinite;
+  animation: move02 3s infinite;
 }
 @keyframes move02 {
   0% {
     top: 0.43rem;
   }
   50% {
-    top: 0.53rem;
+    top: 0.59rem;
   }
   100% {
     top: 0.43rem;
@@ -329,7 +336,7 @@ export default {
     bottom: 0.33rem;
   }
   50% {
-    bottom: 0.2rem;
+    bottom: 0.16rem;
   }
   100% {
     bottom: 0.33rem;
@@ -354,13 +361,13 @@ export default {
 }
 @keyframes move05 {
   0% {
-    bottom: 0.18rem;
+    bottom: -1.2rem;
   }
   50% {
-    bottom: 0.1rem;
+    bottom: -1.4rem;
   }
   100% {
-    bottom: 0.18rem;
+    bottom: -1.2rem;
   }
 }
 .icon-tsud {
@@ -392,7 +399,7 @@ export default {
   }
 }
 .icon-usdc {
-  animation: move08 2s infinite;
+  animation: move08 4s infinite;
 }
 @keyframes move08 {
   0% {
@@ -417,6 +424,20 @@ export default {
   }
   100% {
     bottom: 0.14rem;
+  }
+}
+.icon-oval02 {
+  animation: move010 2s infinite;
+}
+@keyframes move010 {
+  0% {
+    top: 52%;
+  }
+  50% {
+    top: 46%;
+  }
+  100% {
+    top: 52%;
   }
 }
 </style>

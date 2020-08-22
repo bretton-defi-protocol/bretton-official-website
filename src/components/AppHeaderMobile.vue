@@ -10,16 +10,19 @@
         <img :src="navBtnIcon" alt>
       </span>
     </div>
-    <div class="popover-nav popover" v-if="showPopoverNav">
-      <p
-        v-for="(item,index) in navArr"
-        :key="index"
-        :class="{active: index ===  activeIndex}"
-        @click="switchItem(item, index)"
-      >{{ item.text }}</p>
-      <p v-if="lang == 'zh-CN'" @click="switchLang">English</p>
-      <p v-else @click="switchLang">切换中文</p>
-    </div>
+    <transition name="fade">
+      <div class="popover-nav popover" v-if="showPopoverNav">
+        <p
+          v-for="(item,index) in navArr"
+          :key="index"
+          :class="{active: index ===  activeIndex}"
+          @click="switchItem(item, index)"
+          class="nav-item"
+        >{{ item.text }}</p>
+        <p v-if="lang == 'zh-CN'" @click="switchLang">English</p>
+        <p v-else @click="switchLang">切换中文</p>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
@@ -95,6 +98,7 @@ export default {
 
   .nav-btn {
     position: relative;
+    cursor: pointer;
   }
 
   .popover-nav {
@@ -105,6 +109,10 @@ export default {
     top: 1.2rem;
     max-width: 88%;
     z-index: 999;
+  }
+
+  .nav-item {
+    cursor: pointer;
   }
 }
 </style>

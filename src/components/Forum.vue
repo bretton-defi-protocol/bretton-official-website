@@ -44,6 +44,7 @@ export default {
     padding: 0.12rem 0.4rem;
     background: rgba(255, 255, 255, 1);
     border-radius: 20px;
+    cursor: pointer;
   }
 
   .text-box {

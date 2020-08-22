@@ -1,5 +1,5 @@
 <template>
-  <div class="faq">
+  <div class="faq" id="faq-section" :class="{show: showUp}">
     <div class="global-width flex-between faq-wrap">
       <div class="faq-left col-md-6 col-sm-12">
         <div class="text-box">
@@ -16,13 +16,21 @@
   </div>
 </template>
 <script>
+import ScrollFn from "@/mixins/scrollFn";
 export default {
   name: "faq-dusd",
+  mixins: [ScrollFn],
 
   data() {
     return {
       faqImg: require("@/assets/images/faq/faq.png")
     };
+  },
+
+  methods: {},
+
+  mounted() {
+    this.id = "faq-section";
   }
 };
 </script>
@@ -66,6 +74,45 @@ export default {
 
     img {
       max-width: 100%;
+    }
+  }
+
+  &.show {
+    .faq-right {
+      animation-name: showFaqRight;
+    }
+    .faq-left {
+      animation-name: showFaqLeft;
+    }
+  }
+
+  &-right,
+  &-left {
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+
+  @keyframes showFaqRight {
+    0% {
+      opacity: 0;
+      transform: translate(100px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes showFaqLeft {
+    0% {
+      opacity: 0;
+      transform: translate(-100px, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
     }
   }
 }
