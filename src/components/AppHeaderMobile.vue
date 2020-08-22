@@ -29,14 +29,18 @@ export default {
       logoMobile: require("@/assets/images/header/mobile-logo.png"),
       navBtnIcon: require("@/assets/images/header/nav-btn.png"),
       activeIndex: 0,
-      navArr: [
-        { id: "00", text: this.$t("nav.home") },
-        { id: "01", text: this.$t("nav.forum") },
-        { id: "02", text: this.$t("nav.coporation") },
-        { id: "03", text: this.$t("nav.switchText") }
-      ],
       showPopoverNav: false
     };
+  },
+  computed: {
+    navArr() {
+      return [
+        { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
+        { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
+        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" },
+        { id: "03", text: this.$t("nav.switchText") }
+      ];
+    }
   },
 
   methods: {

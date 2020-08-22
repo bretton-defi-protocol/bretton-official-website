@@ -15,8 +15,11 @@
 export default {
   name: "funtion-section",
   data() {
-    return {
-      functionArr: [
+    return {};
+  },
+  computed: {
+    functionArr() {
+      return [
         {
           title: this.$t("functionSection.mintTitle"),
           desc: this.$t("functionSection.mintDesc"),
@@ -32,8 +35,8 @@ export default {
           desc: this.$t("functionSection.lockDesc"),
           img: require("@/assets/images/function/img-lock.png")
         }
-      ]
-    };
+      ];
+    }
   }
 };
 </script>

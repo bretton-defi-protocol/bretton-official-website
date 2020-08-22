@@ -35,7 +35,15 @@ export default {
 
   data() {
     return {
-      questionArr: [
+      arrowUp: require("@/assets/images/question/icon-arrow-up.png"),
+      arrowDown: require("@/assets/images/question/icon-arrow-down.png"),
+      activeIndex: 1
+    };
+  },
+
+  computed: {
+    questionArr() {
+      return [
         {
           title: this.$t("question.item01Title"),
           text: this.$t("question.item01Desc")
@@ -60,11 +68,8 @@ export default {
           title: this.$t("question.item06Title"),
           text: this.$t("question.item06Desc")
         }
-      ],
-      arrowUp: require("@/assets/images/question/icon-arrow-up.png"),
-      arrowDown: require("@/assets/images/question/icon-arrow-down.png"),
-      activeIndex: 1
-    };
+      ];
+    }
   },
 
   methods: {

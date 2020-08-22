@@ -26,8 +26,13 @@ export default {
 
   data() {
     return {
-      deltaImg: require("@/assets/images/faq/delta-img.png"),
-      deltaFaq: [
+      deltaImg: require("@/assets/images/faq/delta-img.png")
+    };
+  },
+
+  computed: {
+    deltaFaq() {
+      return [
         {
           text: this.$t("faqForDelta.deltadesc01")
         },
@@ -43,8 +48,8 @@ export default {
         {
           text: this.$t("faqForDelta.deltadesc05")
         }
-      ]
-    };
+      ];
+    }
   }
 };
 </script>

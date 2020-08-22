@@ -27,14 +27,24 @@ export default {
   data() {
     return {
       logoSrc: require("@/assets/images/header/logo.png"),
-      navArr: [
-        { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
-        { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
-        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" }
-      ],
+      // navArr: [
+      //   { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
+      //   { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
+      //   { id: "02", text: this.$t("nav.coporation"), anchor: "contact" }
+      // ],
       showLangPopover: false,
       lang: localStorage.getItem("lang") || "zh-CN"
     };
+  },
+
+  computed: {
+    navArr() {
+      return [
+        { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
+        { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
+        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" }
+      ];
+    }
   },
 
   methods: {
@@ -98,6 +108,7 @@ export default {
       align-items: center;
       li {
         cursor: pointer;
+        text-transform: uppercase;
       }
     }
   }
