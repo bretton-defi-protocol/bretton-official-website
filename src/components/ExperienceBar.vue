@@ -10,7 +10,7 @@
             class="num"
             :autoplay="false"
             :startVal="0"
-            :endVal="mintVal"
+            :endVal="totalSupply.nUSD"
             :duration="3000"
           ></countTo>DELT,
         </span>
@@ -22,7 +22,7 @@
             class="num"
             :autoplay="false"
             :startVal="0"
-            :endVal="delta"
+            :endVal="totalSupply.BRET"
             :duration="3000"
           ></countTo>DELT
         </span>
@@ -31,11 +31,25 @@
       <div class="text text-mobile">
         <p>
           {{ $t('experienceBar.minted')}}
-          <i class="num">{{ mintVal}}</i>DELT,
+          <countTo
+            ref="countTo03"
+            class="num"
+            :autoplay="false"
+            :startVal="0"
+            :endVal="totalSupply.nUSD"
+            :duration="3000"
+          ></countTo>DELT,
         </p>
         <p>
           {{ $t('experienceBar.benefit')}}
-          <i class="num">${{ delta}}</i> DELT
+          <countTo
+            ref="countTo04"
+            class="num"
+            :autoplay="false"
+            :startVal="0"
+            :endVal="totalSupply.BRET"
+            :duration="3000"
+          ></countTo>DELT
         </p>
       </div>
       <p class="btn-experience-bar">
@@ -59,6 +73,13 @@ export default {
     };
   },
 
+  props: {
+    totalSupply: {
+      type: Object,
+      default: {}
+    }
+  },
+
   mounted() {
     this.id = "experience-bar";
   },
@@ -68,6 +89,8 @@ export default {
       if (newVal) {
         this.$refs.countTo01.start();
         this.$refs.countTo02.start();
+        this.$refs.countTo03.start();
+        this.$refs.countTo04.start();
       }
     }
   }

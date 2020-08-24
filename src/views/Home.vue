@@ -3,7 +3,7 @@
     <FirstScreen/>
     <FunctionSection/>
     <FAQdusd/>
-    <ExperienceBar/>
+    <ExperienceBar :totalSupply="totalSupply"/>
     <FAQdelta/>
     <Question/>
     <Forum/>
@@ -19,6 +19,7 @@ import FAQdelta from "@/components/FAQdelta.vue";
 import ExperienceBar from "@/components/ExperienceBar.vue";
 import Question from "@/components/Question.vue";
 import Forum from "@/components/Forum.vue";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Home",
@@ -30,6 +31,17 @@ export default {
     FAQdelta,
     Question,
     Forum
+  },
+  computed: {
+    ...mapState({
+      totalSupply: state => state.totalSupply.totalSupply
+    })
+  },
+  methods: {
+    ...mapActions(["getTotalSupplyAction"])
+  },
+  mounted() {
+    this.getTotalSupplyAction();
   }
 };
 </script>
