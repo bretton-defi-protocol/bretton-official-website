@@ -103,7 +103,7 @@ export default {
 
 <style scoped lang="scss">
 .main {
-  padding-top: 0.9rem;
+  padding: 3%;
 }
 .first-banner {
   background: linear-gradient(

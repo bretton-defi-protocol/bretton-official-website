@@ -110,7 +110,7 @@ export default {
       align-items: center;
       li {
         cursor: pointer;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
     }
   }

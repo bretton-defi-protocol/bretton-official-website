@@ -99,9 +99,10 @@ export default {
   }
 
   .nav-btn-icon {
-    width: 46px;
-    height: 26px;
     cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
 
     img {
       max-width: 100%;
@@ -128,6 +129,7 @@ export default {
   .nav-btn {
     position: relative;
     cursor: pointer;
+    z-index: 9999;
   }
 
   .popover-nav {
