@@ -17,7 +17,13 @@
             </span>
             <div class="text-box">
               <div class="item-header">{{ item.title }}</div>
-              <div class="item-body" v-if="activeIndex == index">{{ item.text }}</div>
+              <div class="item-body" v-if="activeIndex == index && !item.textIsArr">{{ item.text }}</div>
+              <div class="item-body" v-if="activeIndex == index && item.textIsArr">
+                <div class="sub-text-item" v-for="(subItem, index) in item.text" :key="index">
+                  <span class="step">第{{ subItem.step }}步</span>
+                  <p>{{ subItem.text }}</p>
+                </div>
+              </div>
             </div>
           </li>
           <p class="tip">
@@ -50,27 +56,28 @@ export default {
       return [
         {
           title: this.$t("question.item01Title"),
-          text: this.$t("question.item01Desc")
+          text: this.$t("question.item01Desc"),
+          textIsArr: false
         },
         {
           title: this.$t("question.item02Title"),
-          text: this.$t("question.item02Desc")
+          text: this.$t("question.item02Desc"),
+          textIsArr: true
         },
         {
           title: this.$t("question.item03Ttile"),
-          text: this.$t("question.item03Desc")
+          text: this.$t("question.item03Desc"),
+          textIsArr: false
         },
         {
           title: this.$t("question.item04Title"),
-          text: this.$t("question.item04Desc")
+          text: this.$t("question.item04Desc"),
+          textIsArr: true
         },
         {
           title: this.$t("question.item05Title"),
-          text: this.$t("question.item05Desc")
-        },
-        {
-          title: this.$t("question.item06Title"),
-          text: this.$t("question.item06Desc")
+          text: this.$t("question.item05Desc"),
+          textIsArr: false
         }
       ];
     }
@@ -136,10 +143,29 @@ export default {
 
     .item-body {
       margin-top: 0.4rem;
+
+      .sub-text-item {
+        z-index: 3;
+        > p {
+          display: inline-block;
+          width: 80%;
+          vertical-align: text-top;
+        }
+
+        .step {
+          vertical-align: text-top;
+          display: inline-block;
+          width: 0.7rem;
+          font-weight: 600;
+          margin-right: 0.08rem;
+          letter-spacing: 0.04rem;
+        }
+      }
     }
 
     .text-box {
       flex: 2;
+      z-index: 3;
     }
   }
 
@@ -200,6 +226,7 @@ export default {
     position: absolute;
     bottom: 0.1rem;
     right: 0;
+    z-index: -1;
   }
 
   .question-list {

@@ -6,8 +6,11 @@
       </a>
     </h1>
     <div class="nav-btn col-2">
-      <span class="nav-btn-icon" @click="toggleNav">
+      <span class="nav-btn-icon" @click="showPopoverNav=true" v-if="!showPopoverNav">
         <img :src="navBtnIcon" alt>
+      </span>
+      <span class="nav-btn-icon close" v-if="showPopoverNav" @click="showPopoverNav=false">
+        <img :src="navCloseIcon" alt>
       </span>
     </div>
     <transition name="fade">
@@ -33,9 +36,11 @@ export default {
     return {
       logoMobile: require("@/assets/images/header/mobile-logo.png"),
       navBtnIcon: require("@/assets/images/header/nav-btn.png"),
+      navCloseIcon: require("@/assets/images/header/close.png"),
       activeIndex: 0,
       showPopoverNav: false,
-      lang: localStorage.getItem("lang") || "zh-CN"
+      lang: localStorage.getItem("lang") || "zh-CN",
+      navActive: false
     };
   },
   computed: {
@@ -56,6 +61,13 @@ export default {
     switchItem(item, index) {
       this.activeIndex = index;
       this.showPopoverNav = false;
+
+      let target = document.getElementById(item.anchor);
+
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: "smooth"
+      });
     },
 
     switchLang() {
@@ -93,6 +105,23 @@ export default {
 
     img {
       max-width: 100%;
+    }
+
+    .cross {
+      display: inline-block;
+      width: 0.35rem;
+      height: 0.025rem;
+      background: #ffffff;
+      transform: rotate(45deg) translate(-10%, -5%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0.35rem;
+        height: 0.025rem;
+        background: #ffffff;
+        transform: rotate(90deg) translate(1%, 761%);
+      }
     }
   }
 

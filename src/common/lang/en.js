@@ -1,6 +1,6 @@
 module.exports = {
   nav: {
-    home: 'HOME',
+    home: 'Home',
     forum: 'DeltaFans',
     coporation: 'Cooperation',
     switchText: '切换中文'
@@ -40,26 +40,54 @@ module.exports = {
   },
   question: {
     questionTitle: 'FAQ',
-    item01Title: 'What do I need to get started?',
+    item01Title: 'What do I need to get started? ',
     item01Desc: 'You need an Ethereum wallet (for example, MetaMask )、some stablecoins(e.g. DAI, or USDC)、Few ETH ( Pay gas fee)',
-    item02Title: 'How do I redeem dUSD for an underlying stablecoin?',
-    item02Desc: 'You need an Ethereum wallet (for example, MetaMask )、some stablecoins(e.g. DAI, or USDC)、Few ETH ( Pay gas fee)',
-    item03Ttile: 'How do I stake DELT?',
-    item03Desc: 'You need an Ethereum wallet (for example, MetaMask )、some stablecoins(e.g. DAI, or USDC)、Few ETH ( Pay gas fee)',
-    item04Title: 'How do I earn  rewards?',
-    item04Desc: 'You need an Ethereum wallet (for example, MetaMask )、some stablecoins(e.g. DAI, or USDC)、Few ETH ( Pay gas fee)',
-    item05Title: 'How do I  swap stablecoins?',
-    item05Desc: 'You need an Ethereum wallet (for example, MetaMask )、some stablecoins(e.g. DAI, or USDC)、Few ETH ( Pay gas fee)',
-    item06Title: 'How do I mint dUSD?',
-    item06Desc: 'You need an Ethereum wallet (for example, MetaMask )、some stablecoins(e.g. DAI, or USDC)、Few ETH ( Pay gas fee)',
+    item02Title: 'How do I mint nUSD?',
+    item02Desc: [{
+        step: '1',
+        text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击 【销毁】'
+      },
+      {
+        step: '2',
+        text: ' 选择您希望得到的稳定币资产，输入您需要销毁的金额。如果锁仓池中流动性余额不足，您就无法销毁换取这个币种，您可以去Unswap中兑换。或者换取池子中的另外稳定币资产。'
+      },
+      {
+        step: '3',
+        text: '在钱包中授权。在销毁 nUSD 的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
+      }
+    ],
+    item03Ttile: 'How do I stake BRET?',
+    item03Desc: '铸币生成ndUSD 即挖矿。',
+    item04Title: 'How do I  swap stablecoins?',
+    item04Desc: [{
+        step: '1',
+        text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击【兑换】'
+      },
+      {
+        step: '2',
+        text: ' 选择您需要兑换的稳定币资产（用资产1换成资产2），输入您想要兑换的金额，'
+      },
+      {
+        step: '3',
+        text: '授权资产1（仅第一次需要）'
+      },
+      {
+        step: '4',
+        text: '确保您的钱包中的资产1充足，然后在钱包中授权。即可获得资产2 。在兑换的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
+      }
+    ],
+    item05Title: 'How do I earn  rewards?',
+    item05Desc: '锁仓 BRET 即可获得 nUSD 收益。',
+
     more: 'For more questions, please click here.',
     moreLink: 'more help'
   },
   forum: {
     forumTitle: 'DeltaFans',
-    coporation: 'Cooperate with us'
+    coporation: 'Cooperate with us',
+    goForum: 'Go To Fans',
   },
   copyright: {
-    tip: 'Copyright © 2020 ******服务集团'
+    tip: 'Copyright © 2020 Bretton Group'
   }
 }

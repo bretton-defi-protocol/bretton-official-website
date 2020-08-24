@@ -16,7 +16,11 @@
           <p>{{$t('home.text01')}}</p>
           <p>{{$t('home.text02')}}</p>
           <p class="btn-wrap">
-            <span class="btn-white">{{$t('home.preview')}}</span>
+            <a
+              class="btn-white"
+              target="_blank"
+              href=" https://fans.bretton.finance/"
+            >{{$t('home.preview')}}</a>
           </p>
 
           <span class="animatin-icon icon-polygonIcon03 hide-mobile">
@@ -148,6 +152,7 @@ export default {
         opacity: 1;
         padding: 10px 32px;
         cursor: pointer;
+        display: initial;
       }
     }
   }

@@ -40,18 +40,44 @@ module.exports = {
   },
   question: {
     questionTitle: '常见问题',
-    item01Title: '使用 DELTA 协议前，需要准备什么？',
+    item01Title: '使用 Bretton 协议前，需要准备什么？',
     item01Desc: 'ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）',
-    item02Title: '怎么销毁 dUSD 获得稳定币资产？',
-    item02Desc: 'ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）',
-    item03Ttile: '如何在 DELTA 生态中挖矿？',
-    item03Desc: 'ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）',
-    item04Title: '如何使用 DELT 赚取收益？',
-    item04Desc: 'ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）',
-    item05Title: '如何使用 DELT 赚取收益？',
-    item05Desc: 'ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）',
-    item06Title: '这是第二个问题',
-    item06Desc: 'ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）',
+    item02Title: '怎么铸币生成 nUSD ？',
+    item02Desc: [{
+        step: '1',
+        text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击 【销毁】'
+      },
+      {
+        step: '2',
+        text: ' 选择您希望得到的稳定币资产，输入您需要销毁的金额。如果锁仓池中流动性余额不足，您就无法销毁换取这个币种，您可以去Unswap中兑换。或者换取池子中的另外稳定币资产。'
+      },
+      {
+        step: '3',
+        text: '在钱包中授权。在销毁 nUSD 的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
+      }
+    ],
+    item03Ttile: 'How do I stake BRET?',
+    item03Desc: '铸币生成ndUSD 即挖矿。',
+    item04Title: 'How do I  swap stablecoins?',
+    item04Desc: [{
+        step: '1',
+        text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击【兑换】'
+      },
+      {
+        step: '2',
+        text: ' 选择您需要兑换的稳定币资产（用资产1换成资产2），输入您想要兑换的金额，'
+      },
+      {
+        step: '3',
+        text: '授权资产1（仅第一次需要）'
+      },
+      {
+        step: '4',
+        text: '确保您的钱包中的资产1充足，然后在钱包中授权。即可获得资产2 。在兑换的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
+      }
+    ],
+    item05Title: 'How do I earn  rewards?',
+    item05Desc: '锁仓 BRET 即可获得 nUSD 收益。',
     more: '如有更多问题，请点击',
     moreLink: '更多帮助'
   },
@@ -61,6 +87,6 @@ module.exports = {
     coporation: '与我们合作'
   },
   copyright: {
-    tip: 'Copyright © 2020 ******Services group'
+    tip: 'Copyright © 2020 Bretton Group'
   }
 }

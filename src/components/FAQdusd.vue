@@ -69,8 +69,8 @@ export default {
   }
 
   .faq-img-box {
-    width: 606px;
-    height: 400px;
+    max-width: 100%;
+    max-height: 100%;
     display: inline-block;
 
     img {

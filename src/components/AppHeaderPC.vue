@@ -1,6 +1,8 @@
 <template>
   <div class="app-header-pc flex-between">
-    <h1 class="logo-pc col-1"></h1>
+    <h1 class="logo-pc col-1">
+      <img :src="logoSrc" alt>
+    </h1>
     <nav class="nav col-4">
       <ul>
         <li
@@ -126,7 +128,7 @@ export default {
     display: inline-block;
     width: 1.22rem;
     height: 0.25rem;
-    background-image: url("../assets/images/header/logo.png");
+    // background-image: url("../assets/images/header/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
   }

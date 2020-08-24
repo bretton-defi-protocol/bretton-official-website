@@ -5,14 +5,18 @@
         <div class="text-box">
           <p>{{$t('forum.forumTitle')}}</p>
           <p>
-            <span class="go-forum">{{$t('forum.goForum')}}</span>
+            <a
+              class="go-forum"
+              target="_blank"
+              href=" https://fans.bretton.finance/"
+            >{{$t('forum.goForum')}}</a>
           </p>
         </div>
       </div>
     </div>
     <p class="contact" id="contact">{{$t('forum.coporation')}}</p>
     <p class="email">
-      <span>1196651331@qq.com</span>
+      <span>contact@bretton.finance</span>
     </p>
     <div class="copyright">
       <p>{{$t('copyright.tip')}}</p>
@@ -45,6 +49,7 @@ export default {
     background: rgba(255, 255, 255, 1);
     border-radius: 20px;
     cursor: pointer;
+    display: initial;
   }
 
   .text-box {
