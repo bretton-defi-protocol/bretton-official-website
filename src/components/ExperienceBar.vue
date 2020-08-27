@@ -12,7 +12,7 @@
             :startVal="0"
             :endVal="totalSupply.nUSD"
             :duration="3000"
-          ></countTo>DELT,
+          ></countTo>BRET,
         </span>
         <span>
           {{ $t("experienceBar.benefit")}}
@@ -24,7 +24,7 @@
             :startVal="0"
             :endVal="totalSupply.BRET"
             :duration="3000"
-          ></countTo>DELT
+          ></countTo>BRET
         </span>
       </p>
 
@@ -38,7 +38,7 @@
             :startVal="0"
             :endVal="totalSupply.nUSD"
             :duration="3000"
-          ></countTo>DELT,
+          ></countTo>BRET,
         </p>
         <p>
           {{ $t('experienceBar.benefit')}}
@@ -49,7 +49,7 @@
             :startVal="0"
             :endVal="totalSupply.BRET"
             :duration="3000"
-          ></countTo>DELT
+          ></countTo>BRET
         </p>
       </div>
       <p class="btn-experience-bar">

@@ -1,42 +1,42 @@
 module.exports = {
   nav: {
     home: 'Home',
-    forum: 'DeltaFans',
+    forum: 'BrettonFans',
     coporation: 'Cooperation',
     switchText: '切换中文'
   },
   home: {
     maintitle01: 'Invest for the',
     maintitle02: 'Future.',
-    text01: 'Delta protocol unites stablecoins, minting, swapping and staking',
+    text01: 'Bretton protocol unites stablecoins, minting, swapping and staking',
     text02: 'into one standard.',
     preview: 'WhitePaper',
   },
   functionSection: {
     mintTitle: 'Mint',
-    mintDesc: 'Get dUSD by depositing your USDC, DAI, TUSD or USDT at a 1:1 ratio.',
+    mintDesc: 'Get nUSD by depositing your USDC, DAI, TUSD or USDT at a 1:1 ratio.',
     stakingTitle: 'Staking',
-    stakingDesc: 'Delta protocol rewards users who contribute dUSD liquidity across the DeFi ecosystem.',
+    stakingDesc: 'Bretton protocol rewards users who contribute nUSD liquidity across the DeFi ecosystem.',
     lockTitle: 'Saving',
-    lockDesc: 'Deposit your delt into the delta SAVE contract and start earning interest.'
+    lockDesc: 'Deposit your bret into the bretton SAVE contract and start earning interest.'
   },
   faqFordUSD: {
-    whatdUSD: 'What is dUSD',
-    duSDdesc: 'dUSD unites stablecoins assets into more useful and higher yielding instruments. dUSD is an ERC20 token issued on Ethereum, with a target price of 1:1 anchored USD, and supported by wallets, exchanges ',
+    whatdUSD: 'What is nUSD',
+    duSDdesc: 'nUSD unites stablecoins assets into more useful and higher yielding instruments. nUSD is an ERC20 token issued on Ethereum, with a target price of 1:1 anchored USD, and supported by wallets, exchanges ',
   },
   experienceBar: {
     minted: 'Supply Balance',
-    currency: 'DELT',
+    currency: 'BRET',
     benefit: ' Total Rewards',
     btnExperience: 'SURFING'
   },
   faqForDelta: {
-    whatdelta: 'What can I do with the DELTA protocol ?',
-    deltadesc01: 'Mint dUSD with your stablecoins',
-    deltadesc02: 'Earn ecosystem rewards DELT by contributing liquidity',
+    whatdelta: 'What can I do with the Bretton protocol ?',
+    deltadesc01: 'Mint nUSD with your stablecoins',
+    deltadesc02: 'Earn ecosystem rewards BRET by contributing liquidity',
     deltadesc03: 'Swap stablecoins with zero slippage',
-    deltadesc04: 'Redeem your dUSD for the underlying collateral',
-    deltadesc05: 'Save your DELT to earn interest rate',
+    deltadesc04: 'Redeem your nUSD for the underlying collateral',
+    deltadesc05: 'Save your BRET to earn interest rate',
   },
   question: {
     questionTitle: 'FAQ',
@@ -45,19 +45,19 @@ module.exports = {
     item02Title: 'How do I mint nUSD?',
     item02Desc: [{
         step: '1',
-        text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击 【销毁】'
+        text: 'Log in to the Bretton app using the Web3 wallet authorization, click [minting]'
       },
       {
         step: '2',
-        text: ' 选择您希望得到的稳定币资产，输入您需要销毁的金额。如果锁仓池中流动性余额不足，您就无法销毁换取这个币种，您可以去Unswap中兑换。或者换取池子中的另外稳定币资产。'
+        text: 'Select the stablecoin asset you want to use and enter the amount of nUSD you want to create'
       },
       {
         step: '3',
-        text: '在钱包中授权。在销毁 nUSD 的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
+        text: 'Authorize the stablecoin assets you want to use (only required at the first time）'
       }
     ],
     item03Ttile: 'How do I stake BRET?',
-    item03Desc: '铸币生成ndUSD 即挖矿。',
+    item03Desc: '铸币生成nUSD 即挖矿。',
     item04Title: 'How do I  swap stablecoins?',
     item04Desc: [{
         step: '1',
@@ -83,7 +83,7 @@ module.exports = {
     moreLink: 'more help'
   },
   forum: {
-    forumTitle: 'DeltaFans',
+    forumTitle: 'BrettonFans',
     coporation: 'Cooperate with us',
     goForum: 'Go To Fans',
   },

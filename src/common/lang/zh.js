@@ -8,35 +8,35 @@ module.exports = {
   home: {
     maintitle01: 'Invest for the',
     maintitle02: 'Future.',
-    text01: 'Delta协议是基于以太坊的标准协议，将铸币、挖矿、锁仓三大功能一体化的去',
+    text01: 'Bretton协议是基于以太坊的标准协议，将铸币、挖矿、锁仓三大功能一体化的去',
     text02: '中心化协议。',
     preview: '查看白皮书',
   },
   functionSection: {
     mintTitle: '铸币',
-    mintDesc: '协议用稳定币资产做储备，1:1存入获得dUSD，提高安全性',
+    mintDesc: '协议用稳定币资产做储备，1:1存入获得nUSD，提高安全性',
     stakingTitle: '挖矿',
-    stakingDesc: '协议代币Delt采用铸币挖矿机制获得，奖励协议生态贡献者',
+    stakingDesc: '协议代币BRET采用铸币挖矿机制获得，奖励协议生态贡献者',
     lockTitle: '锁仓',
-    lockDesc: '将Delt协议代币锁仓可获得分红池奖励'
+    lockDesc: '将BRET协议代币锁仓可获得分红池奖励'
   },
   faqFordUSD: {
-    whatdUSD: '什么是dUSD',
-    duSDdesc: '稳定币dUSD是一种锚定美元的资产担保型加密数字货币。dUSD是在以太坊上发行的ERC20代币，其目标价格1:1锚定美元，有大量的钱包、交易所等生态支持。',
+    whatdUSD: '什么是nUSD',
+    duSDdesc: '稳定币nUSD是一种锚定美元的资产担保型加密数字货币。nUSD是在以太坊上发行的ERC20代币，其目标价格1:1锚定美元，有大量的钱包、交易所等生态支持。',
   },
   experienceBar: {
     minted: '已铸币挖矿',
-    currency: 'DELT',
+    currency: 'BRET',
     benefit: ' 已获得分红收益',
     btnExperience: '开始体验'
   },
   faqForDelta: {
-    whatdelta: '我可以使用 DELTA 协议做什么？',
-    deltadesc01: '用您的稳定币 铸币 生成 dUSD',
-    deltadesc02: '持有您的 dUSD 来 挖矿 ，获得我们的协议代币 DELT',
+    whatdelta: '我可以使用 Bretton 协议做什么？',
+    deltadesc01: '用您的稳定币 铸币 生成 nUSD',
+    deltadesc02: '持有您的 nUSD 来 挖矿 ，获得我们的协议代币 BRET',
     deltadesc03: '1:1无滑点地 兑换 稳定币',
-    deltadesc04: '销毁 您的 dUSD 换成您需要的稳定币',
-    deltadesc05: '锁仓 DELT 获得收益',
+    deltadesc04: '销毁 您的 nUSD 换成您需要的稳定币',
+    deltadesc05: '锁仓 BRET 获得收益',
   },
   question: {
     questionTitle: '常见问题',
@@ -57,7 +57,7 @@ module.exports = {
       }
     ],
     item03Ttile: 'How do I stake BRET?',
-    item03Desc: '铸币生成ndUSD 即挖矿。',
+    item03Desc: '铸币生成nUSD 即挖矿。',
     item04Title: 'How do I  swap stablecoins?',
     item04Desc: [{
         step: '1',
