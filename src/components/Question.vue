@@ -20,7 +20,7 @@
               <div class="item-body" v-if="activeIndex == index && !item.textIsArr">{{ item.text }}</div>
               <div class="item-body" v-if="activeIndex == index && item.textIsArr">
                 <div class="sub-text-item" v-for="(subItem, index) in item.text" :key="index">
-                  <span class="step">第{{ subItem.step }}步</span>
+                  <span class="step">{{ subItem.step }}</span>
                   <p>{{ subItem.text }}</p>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default {
           width: 0.7rem;
           font-weight: 600;
           margin-right: 0.08rem;
-          letter-spacing: 0.04rem;
+          // letter-spacing: 0.04rem;
         }
       }
     }

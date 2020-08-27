@@ -44,40 +44,44 @@ module.exports = {
     item01Desc: 'You need an Ethereum wallet (for example, MetaMask )、some stablecoins(e.g. DAI, or USDC)、Few ETH ( Pay gas fee)',
     item02Title: 'How do I mint nUSD?',
     item02Desc: [{
-        step: '1',
+        step: 'Step 1',
         text: 'Log in to the Bretton app using the Web3 wallet authorization, click [minting]'
       },
       {
-        step: '2',
+        step: 'Step 2',
         text: 'Select the stablecoin asset you want to use and enter the amount of nUSD you want to create'
       },
       {
-        step: '3',
+        step: 'Step 3',
         text: 'Authorize the stablecoin assets you want to use (only required at the first time）'
+      },
+      {
+        step: 'Step 4',
+        text: ' Make sure you have enough stablecoin assets in your wallet, then authorize them in your wallet to get nUSD . Currently we support stablecoin assets: TUSD, USDT, USDC, HUSD, PAX,BUSD'
       }
     ],
     item03Ttile: 'How do I stake BRET?',
-    item03Desc: '铸币生成nUSD 即挖矿。',
+    item03Desc: 'Minting generates nUSD, which is mining.',
     item04Title: 'How do I  swap stablecoins?',
     item04Desc: [{
-        step: '1',
-        text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击【兑换】'
+        step: 'Step 1',
+        text: ' Log in to the Bretton app using the Web3 wallet authorization and click [Redeem]'
       },
       {
-        step: '2',
-        text: ' 选择您需要兑换的稳定币资产（用资产1换成资产2），输入您想要兑换的金额，'
+        step: 'Step 2',
+        text: 'Select the stablecoin asset you want to exchange (change asset 1 to asset 2) and enter the amount you want to exchange'
       },
       {
-        step: '3',
-        text: '授权资产1（仅第一次需要）'
+        step: 'Step 3',
+        text: 'Authorizing asset 1 (only required at the first time)'
       },
       {
-        step: '4',
-        text: '确保您的钱包中的资产1充足，然后在钱包中授权。即可获得资产2 。在兑换的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
+        step: 'Step 4',
+        text: 'Make sure you have sufficient assets in your wallet 1 and then authorize them in your wallet to get Asset 2 .In the exchange operation, we will charge a certain fee, the rate is specified by the protocol, this fee will enter the reward pool to reward ecological contributors.'
       }
     ],
     item05Title: 'How do I earn  rewards?',
-    item05Desc: '锁仓 BRET 即可获得 nUSD 收益。',
+    item05Desc: 'NUSD gains can be obtained by hedging BRET.',
 
     more: 'For more questions, please click here.',
     moreLink: 'more help'

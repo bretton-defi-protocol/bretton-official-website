@@ -44,35 +44,39 @@ module.exports = {
     item01Desc: 'ETH账户（例如MetaMask）、稳定币资产（ USDT、HUSD 等）、少量ETH资产（支付 Gas 费用）',
     item02Title: '怎么铸币生成 nUSD ？',
     item02Desc: [{
-        step: '1',
+        step: '第 1 步',
         text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击 【销毁】'
       },
       {
-        step: '2',
+        step: '第 2 步',
         text: ' 选择您希望得到的稳定币资产，输入您需要销毁的金额。如果锁仓池中流动性余额不足，您就无法销毁换取这个币种，您可以去Unswap中兑换。或者换取池子中的另外稳定币资产。'
       },
       {
-        step: '3',
+        step: '第 3 步',
         text: '在钱包中授权。在销毁 nUSD 的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
+      },
+      {
+        step: '第 4 步',
+        text: '确保您的钱包中的稳定币资产充足，然后在钱包中授权。即可获得 nUSD 。目前我们支持的稳定币资产： TUSD、 USDT、 USDC、 HUSD、 PAX、 BUSD '
       }
     ],
-    item03Ttile: 'How do I stake BRET?',
+    item03Ttile: '如何在 Bretton 生态中挖矿',
     item03Desc: '铸币生成nUSD 即挖矿。',
-    item04Title: 'How do I  swap stablecoins?',
+    item04Title: '如何在 Bretton 生态中兑换稳定币?',
     item04Desc: [{
-        step: '1',
+        step: '第 1 步',
         text: ' 使用Web3钱包授权登录 Bretton 应用程序，点击【兑换】'
       },
       {
-        step: '2',
+        step: '第 2 步',
         text: ' 选择您需要兑换的稳定币资产（用资产1换成资产2），输入您想要兑换的金额，'
       },
       {
-        step: '3',
+        step: '第 3 步',
         text: '授权资产1（仅第一次需要）'
       },
       {
-        step: '4',
+        step: '第 4 步',
         text: '确保您的钱包中的资产1充足，然后在钱包中授权。即可获得资产2 。在兑换的操作中，我们会收取一定的手续费，费率由协议中指定，设置此项费用会进入奖励池中，奖励生态贡献者。'
       }
     ],
