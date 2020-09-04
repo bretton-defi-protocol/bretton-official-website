@@ -19,7 +19,7 @@
             <a
               class="btn-white"
               target="_blank"
-              href=" https://fans.bretton.finance/"
+              href="https://wiki.bretton.finance/bretto/"
             >{{$t('home.preview')}}</a>
           </p>
 

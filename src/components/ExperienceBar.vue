@@ -54,7 +54,11 @@
         </p>
       </div>
       <p class="btn-experience-bar">
-        <span class="btn-experience">{{ $t('experienceBar.btnExperience')}}</span>
+        <a
+          target="_blank"
+          href="https://app.bretton.finance/"
+          class="btn-experience"
+        >{{ $t('experienceBar.btnExperience')}}</a>
       </p>
     </div>
   </div>
@@ -135,7 +139,8 @@ export default {
     transform: translate(0, 100px);
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    > span {
+    .btn-experience {
+      display: inline;
       font-size: 14px;
       font-weight: 400;
       line-height: 22px;
