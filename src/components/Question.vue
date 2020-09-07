@@ -28,7 +28,7 @@
           </li>
           <p class="tip">
             {{ $t('question.more')}}
-            <a class="link">{{ $t('question.moreLink')}}</a>
+            <a class="link" @click="goMoreLink">{{ $t('question.moreLink')}}</a>
           </p>
 
           <div class="bottom-img"></div>
@@ -47,7 +47,7 @@ export default {
     return {
       arrowUp: require("@/assets/images/question/icon-arrow-up.png"),
       arrowDown: require("@/assets/images/question/icon-arrow-down.png"),
-      activeIndex: 1
+      activeIndex: 0
     };
   },
 
@@ -62,6 +62,11 @@ export default {
         {
           title: this.$t("question.item02Title"),
           text: this.$t("question.item02Desc"),
+          textIsArr: true
+        },
+        {
+          title: this.$t("question.itemRedeemTitle"),
+          text: this.$t("question.itemRedeemDesc"),
           textIsArr: true
         },
         {
@@ -86,6 +91,10 @@ export default {
   methods: {
     changeActiveItem(item, index) {
       this.activeIndex = index;
+    },
+
+    goMoreLink() {
+      window.open("https://wiki.bretton.finance/bretto/");
     }
   },
   mounted() {

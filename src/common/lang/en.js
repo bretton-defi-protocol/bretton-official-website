@@ -8,21 +8,21 @@ module.exports = {
   home: {
     maintitle01: 'Invest for the',
     maintitle02: 'Future.',
-    text01: 'Bretton protocol unites stablecoins, minting, swapping and staking',
-    text02: 'into one standard.',
+    text01: 'The Bretton Protocol is the world’s first Protocol of mining with Stable Coins and is also a exchange market for the pegged assets. Everyone can use it to generate nUSD-a stable coin-with pegged assets and reserve assets',
+    text02: '',
     preview: 'WhitePaper',
   },
   functionSection: {
     mintTitle: 'Mint',
-    mintDesc: 'Get nUSD by depositing your USDC, DAI, TUSD or USDT at a 1:1 ratio.',
+    mintDesc: 'Get nUSD by depositing your stable coins such as USDC, DAI, TUSD and USDT at a 1:1 ratio or by a surplus of collateral',
     stakingTitle: 'Staking',
-    stakingDesc: 'Bretton protocol rewards users who contribute nUSD liquidity across the DeFi ecosystem.',
+    stakingDesc: 'The governance token BRET shall be obtained by using coinage mining and liquid mining to reward ecological contributors of the Agreement',
     lockTitle: 'Saving',
-    lockDesc: 'Deposit your bret into the bretton SAVE contract and start earning interest.'
+    lockDesc: ' Deposit your BRET into the Bretton SAVE contract and start earning interest.'
   },
   faqFordUSD: {
-    whatdUSD: 'What is nUSD',
-    duSDdesc: 'nUSD unites stablecoins assets into more useful and higher yielding instruments. nUSD is an ERC20 token issued on Ethereum, with a target price of 1:1 anchored USD, and supported by wallets, exchanges ',
+    whatdUSD: 'Who is nUSD',
+    duSDdesc: 'nUSD is a stablecoin through pegging a basket digital dollar assets.The nUSD provides a really way to peg the dollar, target price is $1',
   },
   experienceBar: {
     minted: 'Supply Balance',
@@ -62,6 +62,24 @@ module.exports = {
     ],
     item03Ttile: 'How do I stake BRET?',
     item03Desc: 'Minting generates nUSD, which is mining.',
+    itemRedeemTitle: 'How do I redeem nUSD for an underlying stablecoin?',
+    itemRedeemDesc: [{
+        step: '',
+        text: 'You can get stablecoin assets by destroying nUSD at any time.'
+      },
+      {
+        step: 'Step 1',
+        text: 'Log In to the Bretton app using the Web3 wallet authorization and click [destroy]'
+      },
+      {
+        step: 'Step 2',
+        text: 'Select the stablecoin asset you want to get and enter the amount you need to destroy.If the liquidity balance in the lock pool is insufficient, you will not be able to destroy the exchange for this currency, you can go to Unswap to exchange or exchange for another stablecoin asset in the pool.'
+      },
+      {
+        step: 'Step 3',
+        text: 'Authorize  the wallet.In the destruction of nUSD operation, we will charge a certain fee, the rate is specified by the protocol, this fee will enter the reward pool to reward ecological contributors.'
+      }
+    ],
     item04Title: 'How do I  swap stablecoins?',
     item04Desc: [{
         step: 'Step 1',
