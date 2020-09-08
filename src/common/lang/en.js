@@ -3,6 +3,7 @@ module.exports = {
     home: 'Home',
     forum: 'BrettonFans',
     coporation: 'Cooperation',
+    useapp: 'App',
     switchText: '切换中文'
   },
   home: {
@@ -11,6 +12,7 @@ module.exports = {
     text01: 'The Bretton Protocol is the world’s first Protocol of mining with Stable Coins and is also a exchange market for the pegged assets. Everyone can use it to generate nUSD-a stable coin-with pegged assets and reserve assets',
     text02: '',
     preview: 'WhitePaper',
+    useApp: 'Use App'
   },
   functionSection: {
     mintTitle: 'Mint',

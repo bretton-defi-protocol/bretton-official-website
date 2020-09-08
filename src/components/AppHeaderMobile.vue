@@ -22,8 +22,8 @@
           @click="switchItem(item, index)"
           class="nav-item"
         >{{ item.text }}</p>
-        <p v-if="lang == 'zh-CN'" @click="switchLang">English</p>
-        <p v-else @click="switchLang">切换中文</p>
+        <p v-if="lang == 'zh-CN'" @click="switchLang" class="switch-lang">English</p>
+        <p v-else @click="switchLang" class="switch-lang">切换中文</p>
       </div>
     </transition>
   </div>
@@ -48,7 +48,8 @@ export default {
       return [
         { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
         { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
-        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" }
+        { id: "02", text: this.$t("nav.coporation"), anchor: "contact" },
+        { id: "03", text: this.$t("nav.useapp"), anchor: "useapp" }
       ];
     }
   },
@@ -59,6 +60,11 @@ export default {
     },
 
     switchItem(item, index) {
+      if (index == "03") {
+        window.open("https://app.bretton.finance/home");
+        return;
+      }
+
       this.activeIndex = index;
       this.showPopoverNav = false;
 
@@ -90,18 +96,19 @@ export default {
   display: none;
   padding-top: 0.45rem;
   .logo {
-    width: 2.34rem;
-    height: 0.48rem;
+    width: 2.3rem;
+    height: 0.44rem;
 
     img {
       max-width: 100%;
+      max-height: 100%;
     }
   }
 
   .nav-btn-icon {
     cursor: pointer;
-    max-width: 100%;
-    max-height: 100%;
+    width: 0.24rem;
+    height: 0.24rem;
     display: inline-block;
 
     img {
@@ -135,15 +142,21 @@ export default {
   .popover-nav {
     left: initial;
     right: 0.1rem;
-    height: 3.5rem;
+    height: 2.8rem;
     width: 4.8rem;
     top: 1.2rem;
     max-width: 88%;
     z-index: 999;
   }
 
-  .nav-item {
+  .nav-item,
+  .switch-lang {
     cursor: pointer;
+    font-size: 0.18rem;
+  }
+
+  .popover > p {
+    padding: 0.1rem 0.32rem;
   }
 }
 </style>

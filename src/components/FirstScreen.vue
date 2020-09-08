@@ -19,6 +19,11 @@
             <a
               class="btn-white"
               target="_blank"
+              href="https://app.bretton.finance/home"
+            >{{$t('home.useApp')}}</a>
+            <a
+              class="btn-primary"
+              target="_blank"
               href="https://wiki.bretton.finance/bretto/"
             >{{$t('home.preview')}}</a>
           </p>
@@ -115,7 +120,7 @@ export default {
   width: 100%;
 
   &-left {
-    padding-top: 0.8rem;
+    padding-top: 1.4rem;
     padding-left: 0.4rem;
     position: relative;
 
@@ -142,7 +147,8 @@ export default {
         margin-top: 0.6rem;
         margin-bottom: 0.6rem;
       }
-      .btn-white {
+      .btn-white,
+      .btn-primary {
         background: rgba(255, 255, 255, 1);
         border-radius: 0.2rem;
         font-size: 14px;
@@ -154,12 +160,19 @@ export default {
         cursor: pointer;
         display: initial;
       }
+
+      .btn-primary {
+        border: solid 1px white;
+        background: transparent;
+        color: white;
+        margin-left: 24px;
+      }
     }
   }
 
   &-right {
     position: relative;
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
     .icon-box-wrap {
       max-width: 80%;
     }
@@ -275,20 +288,37 @@ export default {
 
     &-left {
       order: 2;
+      padding-top: 0.4rem;
 
-      // p {
-      //   .btn-wrap {
-      //     margin-bottom: 0.4rem;
-      //   }
-      // }
+      > p {
+        text-align: center;
+        .btn-wrap {
+          margin-top: 0.3rem;
+          margin-bottom: 0.3rem;
+        }
+
+        &:nth-of-type(1) {
+          margin-top: 0.3rem;
+        }
+      }
+
+      > h2 {
+        font-size: 56px;
+        text-align: center;
+      }
     }
 
     &-right {
       order: 1;
+      margin-top: 0.3rem;
 
       .icon-box {
         width: 2.5rem;
         height: 2.5rem;
+      }
+
+      .icon-box-wrap {
+        margin: 0 auto;
       }
 
       .icon-box > span {
