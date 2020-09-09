@@ -18,12 +18,12 @@ module.exports = {
     mintTitle: 'Mint',
     mintDesc: 'Get nUSD by depositing your stable coins such as USDC, DAI, TUSD and USDT at a 1:1 ratio or by a surplus of collateral',
     stakingTitle: 'Staking',
-    stakingDesc: 'The governance token BRET shall be obtained by using coinage mining and liquid mining to reward ecological contributors of the Agreement',
+    stakingDesc: 'The governance token BRET shall be obtained by using coinage mining and yield farming to reward ecological contributors of the Agreement',
     lockTitle: 'Saving',
     lockDesc: ' Deposit your BRET into the Bretton SAVE contract and start earning interest.'
   },
   faqFordUSD: {
-    whatdUSD: 'Who is nUSD',
+    whatdUSD: 'What is nUSD',
     duSDdesc: 'nUSD is a stablecoin through pegging a basket digital dollar assets.The nUSD provides a really way to peg the dollar, target price is $1',
   },
   experienceBar: {
