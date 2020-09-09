@@ -21,11 +21,7 @@
               target="_blank"
               href="https://app.bretton.finance/home"
             >{{$t('home.useApp')}}</a>
-            <a
-              class="btn-primary"
-              target="_blank"
-              href="https://wiki.bretton.finance/bretto/"
-            >{{$t('home.preview')}}</a>
+            <a class="btn-primary">{{$t('home.preview')}}</a>
           </p>
 
           <span class="animatin-icon icon-polygonIcon03 hide-mobile">
@@ -120,7 +116,7 @@ export default {
   width: 100%;
 
   &-left {
-    padding-top: 1.4rem;
+    padding-top: 0.8rem;
     padding-left: 0.4rem;
     position: relative;
 

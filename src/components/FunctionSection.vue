@@ -81,6 +81,13 @@ export default {
       animation-duration: 2s;
       animation-fill-mode: forwards;
       animation-timing-function: ease-in;
+      cursor: pointer;
+
+      &:hover {
+        .img-box {
+          transform: scale(1.1);
+        }
+      }
     }
 
     &.show {
@@ -115,6 +122,9 @@ export default {
 
   .desc {
     padding-bottom: 1.18rem;
+    width: 220px;
+    text-align: center;
+    margin: 0 auto;
   }
 
   @keyframes showUp {

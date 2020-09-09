@@ -5,11 +5,11 @@
         <div class="text-box">
           <p>{{$t('forum.forumTitle')}}</p>
           <p>
-            <a
+            <!-- <a
               class="go-forum"
               target="_blank"
               href=" https://fans.bretton.finance/"
-            >{{$t('forum.goForum')}}</a>
+            >{{$t('forum.goForum')}}</a>-->
           </p>
         </div>
       </div>
@@ -54,6 +54,8 @@ export default {
 
   .text-box {
     background-image: url("../assets/images/forum/forum-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-top: 0.94rem;
     padding-bottom: 0.94rem;
     position: relative;

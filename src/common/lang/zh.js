@@ -7,11 +7,11 @@ module.exports = {
     switchText: 'English'
   },
   home: {
-    maintitle01: '投资未来',
-    maintitle02: '',
+    maintitle01: '重新定义',
+    maintitle02: '稳定币',
     text01: 'Bretton 协议是首个持币挖矿的稳定币协议。通过锚定资产或储备资产铸造美元稳定币 nUSD ，同时也是锚定资产互换协议',
     text02: '',
-    preview: '查看白皮书',
+    preview: '查看文档',
     useApp: '使用App'
   },
   functionSection: {

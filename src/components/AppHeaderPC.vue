@@ -43,7 +43,7 @@ export default {
     navArr() {
       return [
         { id: "00", text: this.$t("nav.home"), anchor: "firstScreen" },
-        { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
+        // { id: "01", text: this.$t("nav.forum"), anchor: "forum" },
         { id: "02", text: this.$t("nav.coporation"), anchor: "contact" },
         { id: "03", text: this.$t("nav.useapp"), anchor: "useapp" }
       ];
@@ -54,7 +54,7 @@ export default {
     switchItem(item, index) {
       // 设置滚动行为改为平滑的滚动
 
-      if (index == "03") {
+      if (item.anchor == "useapp") {
         window.open("https://app.bretton.finance/home");
         return;
       }
