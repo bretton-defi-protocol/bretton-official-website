@@ -26,10 +26,10 @@
               </div>
             </div>
           </li>
-          <p class="tip">
+          <!-- <p class="tip">
             {{ $t('question.more')}}
             <a class="link" @click="goMoreLink">{{ $t('question.moreLink')}}</a>
-          </p>
+          </p>-->
 
           <div class="bottom-img"></div>
         </ul>
@@ -104,7 +104,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .question {
-  padding-bottom: 3.6rem;
+  padding-bottom: 3.4rem;
   .section-title {
     font-size: 32px;
     font-weight: 500;

@@ -1,5 +1,5 @@
-const dUSDAddress = '0x9f875730BC7046bC9Bb189c731E2eD97EDBaC3D5';
-const BRETAddr = '0xA0043FcEa3381D4f1a578BfB27e4c9D5329B76B9';
+const dUSDAddress = '0x1491DcBcDbfFDDFe8909c9Dd0Ef40Ef61be3750c';
+const BRETAddr = '0x096dc18E816f3a39c84c42fE092658EBe57066d5';
 const minABI = [{
     "constant": true,
     "inputs": [],
