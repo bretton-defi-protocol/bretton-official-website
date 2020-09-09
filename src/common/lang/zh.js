@@ -27,9 +27,10 @@ module.exports = {
     duSDdesc: '稳定币 nUSD 是一种锚定一篮子美元资产的担保型加密货币。nUSD 提供了一种真正锚定美元的方法，因此其目标价格是 1 美元。',
   },
   experienceBar: {
-    minted: '已铸币挖矿',
+    minted: 'bretton协议当前总铸币',
     currency: 'BRET',
-    benefit: ' 已获得分红收益',
+    benefit: '矿工共获得',
+    unit: '个',
     btnExperience: '开始体验'
   },
   faqForDelta: {
@@ -112,5 +113,12 @@ module.exports = {
   },
   copyright: {
     tip: 'Copyright © 2020 Bretton Group'
+  },
+  social: {
+    teleAlt: 'telegram',
+    discordAlt: 'discord',
+    twitterAlt: 'twitter',
+    midiumAlt: 'medium',
+    githubAlt: 'github'
   }
 }

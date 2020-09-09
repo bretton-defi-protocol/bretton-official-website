@@ -6,6 +6,7 @@
     <ExperienceBar :totalSupply="totalSupply"/>
     <FAQdelta/>
     <Question/>
+    <SocailShare/>
     <Forum/>
   </div>
 </template>
@@ -19,6 +20,7 @@ import FAQdelta from "@/components/FAQdelta.vue";
 import ExperienceBar from "@/components/ExperienceBar.vue";
 import Question from "@/components/Question.vue";
 import Forum from "@/components/Forum.vue";
+import SocailShare from "@/components/SocailShare.vue";
 import { mapState, mapActions } from "vuex";
 
 export default {
@@ -30,7 +32,8 @@ export default {
     ExperienceBar,
     FAQdelta,
     Question,
-    Forum
+    Forum,
+    SocailShare
   },
   computed: {
     ...mapState({

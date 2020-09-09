@@ -16,7 +16,6 @@
         </span>
         <span>
           {{ $t("experienceBar.benefit")}}
-          <i class="num">$</i>
           <countTo
             ref="countTo02"
             class="num"
@@ -25,6 +24,7 @@
             :endVal="totalSupply.BRET"
             :duration="3000"
           ></countTo>
+          {{ $t('experienceBar.unit')}} BRET
         </span>
       </p>
 
@@ -42,7 +42,6 @@
         </p>
         <p>
           {{ $t('experienceBar.benefit')}}
-          <i class="num">$</i>
           <countTo
             ref="countTo04"
             class="num"
@@ -51,6 +50,7 @@
             :endVal="totalSupply.BRET"
             :duration="3000"
           ></countTo>
+          {{ $t('experienceBar.unit')}} BRET
         </p>
       </div>
       <p class="btn-experience-bar">

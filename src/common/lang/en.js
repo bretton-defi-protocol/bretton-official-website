@@ -27,9 +27,10 @@ module.exports = {
     duSDdesc: 'nUSD is a stablecoin through pegging a basket digital dollar assets.The nUSD provides a really way to peg the dollar, target price is $1',
   },
   experienceBar: {
-    minted: 'Supply Balance',
+    minted: 'The bretton protocol currently has',
     currency: 'BRET',
-    benefit: ' Total Rewards',
+    benefit: 'Miners earning',
+    unit: '',
     btnExperience: 'SURFING'
   },
   faqForDelta: {
@@ -113,5 +114,12 @@ module.exports = {
   },
   copyright: {
     tip: 'Copyright © 2020 Bretton Group'
+  },
+  social: {
+    teleAlt: 'telegram',
+    discordAlt: 'discord',
+    twitterAlt: 'twitter',
+    midiumAlt: 'medium',
+    githubAlt: 'github'
   }
 }

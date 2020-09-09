@@ -104,7 +104,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .question {
-  padding-bottom: 3.4rem;
+  padding-bottom: 0.4rem;
   .section-title {
     font-size: 32px;
     font-weight: 500;
@@ -251,7 +251,7 @@ export default {
   .question {
     height: auto;
     padding-top: initial;
-    padding-bottom: 2.4rem;
+    padding-bottom: 0;
 
     &-list {
       margin-left: 0.24rem;

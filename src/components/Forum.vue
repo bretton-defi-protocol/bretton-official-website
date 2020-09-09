@@ -1,19 +1,20 @@
 <template>
   <div class="forum corporation" id="forum">
-    <div class="forum-container">
+    <!-- <div class="forum-container">
       <div class="global-width forum-wrap">
         <div class="text-box">
           <p>{{$t('forum.forumTitle')}}</p>
           <p>
-            <!-- <a
+            <a
               class="go-forum"
               target="_blank"
               href=" https://fans.bretton.finance/"
-            >{{$t('forum.goForum')}}</a>-->
+            >{{$t('forum.goForum')}}</a>
           </p>
         </div>
       </div>
-    </div>
+    </div>-->
+
     <p class="contact" id="contact">{{$t('forum.coporation')}}</p>
     <p class="email">
       <span>contact@bretton.finance</span>
@@ -79,7 +80,8 @@ export default {
     color: rgba(49, 70, 89, 1);
     letter-spacing: 3px;
     opacity: 1;
-    margin-bottom: 0.32rem;
+    padding-bottom: 0.32rem;
+    padding-top: 0.32rem;
   }
 
   .email {
