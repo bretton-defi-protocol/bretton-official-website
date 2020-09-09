@@ -116,6 +116,7 @@ module.exports = {
     tip: 'Copyright © 2020 Bretton Group'
   },
   social: {
+    more: 'More',
     teleAlt: 'telegram',
     discordAlt: 'discord',
     twitterAlt: 'twitter',

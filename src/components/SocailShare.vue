@@ -1,5 +1,6 @@
 <template>
   <div class="social-container">
+    <h3 class="title-more">{{ $t('social.more')}}</h3>
     <ul class="global-width social-list social-pc">
       <li v-for="(item,index) in socialArr" :key="index" class="social-item">
         <span class="img-box">
@@ -139,6 +140,15 @@ export default {
   }
 }
 
+.title-more {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 45px;
+  color: #314659;
+  opacity: 1;
+  margin-bottom: 64px;
+}
+
 @media (max-width: 996px) {
   .social {
     &-pc {
@@ -157,6 +167,16 @@ export default {
   .global-mobile {
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .title-more {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 45px;
+    color: #314659;
+    opacity: 1;
+    margin-bottom: 48px;
+    margin-top: 48px;
   }
 }
 </style>
