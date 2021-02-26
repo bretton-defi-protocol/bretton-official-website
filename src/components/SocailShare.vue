@@ -5,7 +5,7 @@
       <li v-for="(item,index) in socialArr" :key="index" class="social-item">
         <span class="img-box">
           <i>
-            <img :src="item.img" :alt="item.alt">
+            <img :src="item.img" :alt="item.alt" @click="openWindow(item.url)">
           </i>
         </span>
       </li>
@@ -16,7 +16,7 @@
         <li v-for="(item,index) in socialArr" :key="index" class="social-item" v-if="index <=2">
           <span class="img-box">
             <i>
-              <img :src="item.img" :alt="item.alt">
+              <img :src="item.img" :alt="item.alt" @click="openWindow(item.url)">
             </i>
           </span>
         </li>
@@ -25,7 +25,7 @@
         <li v-for="(item,index) in socialArr" :key="index" class="social-item" v-if="index >=3">
           <span class="img-box">
             <i>
-              <img :src="item.img" :alt="item.alt">
+              <img :src="item.img" :alt="item.alt" @click="openWindow(item.url)">
             </i>
           </span>
         </li>
@@ -42,26 +42,36 @@ export default {
       socialArr: [
         {
           alt: this.$t("social.teleAlt"),
-          img: require("@/assets/images/social/tele.png")
+          img: require("@/assets/images/social/tele.png"),
+          url: 'https://t.me/Bretton_protocol'
         },
         {
           alt: this.$t("social.discordAlt"),
-          img: require("@/assets/images/social/discord.png")
+          img: require("@/assets/images/social/discord.png"),
+          url: 'https://discord.gg/Hue2sPK'
         },
         {
           alt: this.$t("social.twitterAlt"),
-          img: require("@/assets/images/social/twitter.png")
+          img: require("@/assets/images/social/twitter.png"),
+          url: 'https://twitter.com/BrettonProtocol'
         },
         {
           alt: this.$t("social.midiumAlt"),
-          img: require("@/assets/images/social/medium.png")
+          img: require("@/assets/images/social/medium.png"),
+          url: 'https://medium.com/bretton-protocal'
         },
         {
           alt: this.$t("social.githubAlt"),
-          img: require("@/assets/images/social/github.png")
+          img: require("@/assets/images/social/github.png"),
+          url: 'https://github.com/bretton-defi-protocol/bretton-core'
         }
       ]
     };
+  },
+  methods: {
+    openWindow(url) {
+      window.open(url, '_blank')
+    }
   }
 };
 </script>
